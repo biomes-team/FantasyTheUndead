@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BasePawn" Name="BMT_BaseUndead" Abstract="True">
+	<!-- <soundImpactDefault>BulletImpact_Metal</soundImpactDefault> -->
+	<statBases>
+	  <MarketValue>1200</MarketValue>
+	  <PsychicSensitivity>0.2</PsychicSensitivity>
+	  <ToxicResistance>1</ToxicResistance>
+	  <Flammability>1</Flammability>
+	  <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+	  <ComfyTemperatureMax>250</ComfyTemperatureMax>
+	  <MeatAmount>0</MeatAmount>
+	  <!-- <ArmorRating_Heat>2.00</ArmorRating_Heat> -->
+	  <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+	  <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+	</statBases>
+	<tradeability>None</tradeability>
+	<race>
+	  <!-- <fleshType>Mechanoid</fleshType> -->
+	  <needsRest>false</needsRest>
+	  <hasGenders>false</hasGenders>
+	  <foodType>None</foodType>
+	  <lifeExpectancy>2500</lifeExpectancy>
+	  <!-- <bloodDef>Filth_MachineBits</bloodDef> -->
+	  <!-- <nameGenerator>NamerMech</nameGenerator> -->
+	  <!-- <thinkTreeConstant>MechConstant</thinkTreeConstant> -->
+	  <canFlyInVacuum>true</canFlyInVacuum>
+	</race>
+	<comps>
+	  <!-- <li Class="CompProperties_CanBeDormant"> -->
+		<!-- <compClass>CompMechanoid</compClass> -->
+	  <!-- </li> -->
+	</comps>
+  </ThingDef>
+
+  <PawnKindDef Name="BMT_BaseUndeadKind" Abstract="True">
+	<!-- <defaultFactionDef>Mechanoid</defaultFactionDef> -->
+	<aiAvoidCover>true</aiAvoidCover>
+	<destroyGearOnDrop>true</destroyGearOnDrop>
+	<canStrip>false</canStrip>
+	<!-- <minGenerationAge>200</minGenerationAge> -->
+	<!-- <forceNormalGearQuality>true</forceNormalGearQuality> -->
+  </PawnKindDef>
+
+</Defs>
