@@ -21,11 +21,12 @@
 	  <needsRest>false</needsRest>
 	  <hasGenders>false</hasGenders>
 	  <foodType>None</foodType>
+	  <baseBodySize>1</baseBodySize>
 	  <lifeExpectancy>2500</lifeExpectancy>
 	  <!-- <bloodDef>Filth_MachineBits</bloodDef> -->
 	  <!-- <nameGenerator>NamerMech</nameGenerator> -->
 	  <!-- <thinkTreeConstant>MechConstant</thinkTreeConstant> -->
-	  <canFlyInVacuum>true</canFlyInVacuum>
+	  <canFlyInVacuum>false</canFlyInVacuum>
 	</race>
 	<comps>
 	  <!-- <li Class="CompProperties_CanBeDormant"> -->
@@ -41,6 +42,8 @@
 	<canStrip>false</canStrip>
 	<!-- <minGenerationAge>200</minGenerationAge> -->
 	<!-- <forceNormalGearQuality>true</forceNormalGearQuality> -->
+	<weaponMoney>9999~9999</weaponMoney>
+	<weaponTags></weaponTags>
   </PawnKindDef>
 
 </Defs>

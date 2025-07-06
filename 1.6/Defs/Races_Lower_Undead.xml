@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Peasant -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_UndeadPeasant</defName>
+      <label>peasant</label>
+      <description>A simpleminded risen peasant. They are weak in combat but can do dumb labor.</description>
+      <statBases>
+        <MoveSpeed>3.0</MoveSpeed>
+      </statBases>
+      <race>
+        <mechEnabledWorkTypes>
+          <li>Hauling</li>
+        </mechEnabledWorkTypes>
+        <lifeStageAges>
+          <li>
+            <def>UndeadFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
+          </li>
+          <li>
+            <def>UndeadFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
+          </li>
+        </lifeStageAges>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+	  <tools>
+      <li>
+        <label>Arm</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>Arm</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_UndeadPeasant</defName>
+      <label>peasant</label>
+      <race>BMT_UndeadPeasant</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+
+</Defs>
