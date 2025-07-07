@@ -67,4 +67,203 @@
       </lifeStages>
     </PawnKindDef>
 
+
+    <!-- Bone Arbalister -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_BoneArbalister</defName>
+      <label>bone arbalister</label>
+      <description>A lightly armored zombie armed with an arbalest. It is best suited to medium range fighting.</description>
+      <statBases>
+        <MoveSpeed>3.0</MoveSpeed>
+      </statBases>
+      <race>
+        <lifeStageAges>
+          <li>
+            <def>UndeadFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
+          </li>
+          <li>
+            <def>UndeadFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
+          </li>
+        </lifeStageAges>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+	  <tools>
+      <li>
+        <label>Arm</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2.5</cooldownTime>
+		<linkedBodyPartsGroup>Arm</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_BoneArbalister</defName>
+      <label>bone arbalister</label>
+      <race>BMT_BoneArbalister</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	   <weaponTags>
+        <li>BMT_RustedArbalest</li>
+      </weaponTags>
+    </PawnKindDef>
+	
+	    <!-- Zombie Axeman -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_RottingAxeman</defName>
+      <label>rotting axeman</label>
+      <description>A zombie warrior that wields a large rusty axe. Due to its inability to feel pain, it is only lightly armored. It tends to be used on the front lines.</description>
+      <statBases>
+        <MoveSpeed>2.8</MoveSpeed>
+      </statBases>
+      <race>
+        <lifeStageAges>
+          <li>
+            <def>UndeadFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
+          </li>
+          <li>
+            <def>UndeadFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
+          </li>
+        </lifeStageAges>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+	  <tools>
+      <li>
+        <label>Arm</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>2.5</cooldownTime>
+		<linkedBodyPartsGroup>Arm</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_RottingAxeman</defName>
+      <label>rotting axeman</label>
+      <race>BMT_RottingAxeman</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	   <weaponTags>
+        <li>BMT_RustedAxe</li>
+      </weaponTags>
+    </PawnKindDef>
+	
+	
+		    <!-- Risen Footsoldier -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_RisenFootsoldier</defName>
+      <label>risen footsoldier</label>
+      <description>A skeletal fighter wearing rusty armor and wielding a large longsword. Their attacks are slow but devastating against targets with little to no armor.</description>
+      <statBases>
+        <MoveSpeed>4.5</MoveSpeed>
+      </statBases>
+      <race>
+        <lifeStageAges>
+          <li>
+            <def>UndeadFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
+          </li>
+          <li>
+            <def>UndeadFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
+          </li>
+        </lifeStageAges>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+	  <tools>
+      <li>
+        <label>Arm</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>Arm</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_RisenFootsoldier</defName>
+      <label>risen footsoldier</label>
+      <race>BMT_RisenFootsoldier</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	   <weaponTags>
+        <li>BMT_RustedLongsword</li>
+      </weaponTags>
+    </PawnKindDef>
 </Defs>

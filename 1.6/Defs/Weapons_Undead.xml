@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- Ranged --> 
+  <ThingDef Name="LightUndeadRanged" ParentName="BaseWeapon" Abstract="True">
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <graphicData>
+      <drawSize>0.65</drawSize>
+    </graphicData>
+    <equippedDistanceOffset >-0.14</equippedDistanceOffset >
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+    <ThingDef Name="LightUndeadRangedWeapon" ParentName="LightUndeadRanged" Abstract="True">
+    <weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+  </ThingDef>
+  
+    <ThingDef ParentName="LightUndeadRangedWeapon">
+    <defName>BMT_RustedArbalest</defName>
+    <label>rusted arbalest</label>
+    <description>An old and rusted arbalest used by undead arbalisters.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/BowShort</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Small</soundInteract>
+    <statBases>
+      <Mass>1.5</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>BMT_RustedArbalest</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Arrow_Short</defaultProjectile>
+        <warmupTime>1.55</warmupTime>
+        <range>29.9</range>
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <ThingDef Name="BaseProjectileNeolithic" Abstract="True">
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <thingClass>Bullet</thingClass>
+    <label>arrow</label>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingDef>
+
+<!-- Melee -->
+
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>BMT_RustedAxe</defName>
+    <label>rusted axe</label>
+    <description>A worn and rusty axe wielded by a specific type of zombie.</description>
+    <techLevel>Medieval</techLevel>
+    <statBases>
+      <WorkToMake>7000</WorkToMake>
+      <Mass>1.5</Mass>
+    </statBases>
+    <weaponTags>
+      <li>BMT_RustedAxe</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Axe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>BMT_RustedLongsword</defName>
+    <label>rusted longsword</label>
+    <description>An old and rusted longsword. It is wielded by undead soldiers.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LongSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <weaponTags>
+      <li>BMT_RustedLongsword</li>
+    </weaponTags>
+    <costStuffCount>100</costStuffCount>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <Mass>2</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+</Defs>
