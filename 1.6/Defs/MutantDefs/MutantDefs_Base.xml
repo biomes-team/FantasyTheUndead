@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MutantDef Abstract="True" Name="BMT_FantasyTheUndeads_BaseMutantEntity">
+	<consideredSubhuman>true</consideredSubhuman>
+	<showInScenarioEditor>false</showInScenarioEditor>
+  </MutantDef>
+
+  <!-- =================================== -->
+
+  <!-- MutantDef allows us to do without harmony patches and transpilers, as it has all the necessary flags in advance. -->
+
+  <MutantDef ParentName="BMT_FantasyTheUndeads_BaseMutantEntity" Name="BMT_FantasyTheUndeads_UndeadMutant">
+	<defName>BMT_Undead</defName>
+	<label>undead</label>
+	<description>A person who has been turned into a undead..</description>
+	<hediff>WVC_Thrall</hediff>
+	<breathesAir>true</breathesAir>
+	<overrideLabel>true</overrideLabel>
+	<allowEatingCorpses>true</allowEatingCorpses>
+	<!-- <allowedDevelopmentalStages>Adult</allowedDevelopmentalStages> -->
+	<canBleed>false</canBleed>
+	<disableAging>true</disableAging>
+	<disablesIdeo>true</disablesIdeo>
+	<isImmuneToInfections>true</isImmuneToInfections>
+	<preventIllnesses>true</preventIllnesses>
+	<useCorpseGraphics>true</useCorpseGraphics>
+	<woundColor>(0.3, 0.3, 0.0, 1.0)</woundColor>
+	<!-- TEST AI -->
+	<thinkTree>BMT_Undead_Humanlike</thinkTree>
+	<!-- <thinkTreeConstant>ShamblerConstant</thinkTreeConstant> -->
+  </MutantDef>
+
+</Defs>
