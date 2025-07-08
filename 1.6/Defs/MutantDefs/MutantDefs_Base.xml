@@ -14,8 +14,8 @@
 	<defName>BMT_Undead</defName>
 	<label>undead</label>
 	<description>A person who has been turned into a undead..</description>
-	<hediff>WVC_Thrall</hediff>
-	<breathesAir>true</breathesAir>
+	<!-- <hediff>WVC_Thrall</hediff> -->
+	<breathesAir>false</breathesAir>
 	<overrideLabel>true</overrideLabel>
 	<allowEatingCorpses>true</allowEatingCorpses>
 	<!-- <allowedDevelopmentalStages>Adult</allowedDevelopmentalStages> -->

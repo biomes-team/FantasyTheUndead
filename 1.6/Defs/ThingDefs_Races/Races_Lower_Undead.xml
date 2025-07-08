@@ -13,36 +13,9 @@
         <mechEnabledWorkTypes>
           <li>Hauling</li>
         </mechEnabledWorkTypes>
-        <lifeStageAges>
-          <li>
-            <def>UndeadFullyFormed</def>
-            <minAge>0</minAge>
-            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
-            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
-            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
-          </li>
-          <li>
-            <def>UndeadFullyFormed</def>
-            <minAge>100</minAge>
-            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
-            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
-            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
-          </li>
-        </lifeStageAges>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
       </race>
-	  <tools>
-      <li>
-        <label>Arm</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>7</power>
-        <cooldownTime>2</cooldownTime>
-		<linkedBodyPartsGroup>Arm</linkedBodyPartsGroup>
-      </li>
-    </tools>
     </ThingDef>
     
     <PawnKindDef ParentName="NonCombatLightMechanoidKind">
@@ -77,36 +50,9 @@
         <MoveSpeed>3.0</MoveSpeed>
       </statBases>
       <race>
-        <lifeStageAges>
-          <li>
-            <def>UndeadFullyFormed</def>
-            <minAge>0</minAge>
-            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
-            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
-            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
-          </li>
-          <li>
-            <def>UndeadFullyFormed</def>
-            <minAge>100</minAge>
-            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
-            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
-            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
-          </li>
-        </lifeStageAges>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
       </race>
-	  <tools>
-      <li>
-        <label>Arm</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>5</power>
-        <cooldownTime>2.5</cooldownTime>
-		<linkedBodyPartsGroup>Arm</linkedBodyPartsGroup>
-      </li>
-    </tools>
     </ThingDef>
     
     <PawnKindDef ParentName="NonCombatLightMechanoidKind">
@@ -143,36 +89,9 @@
         <MoveSpeed>2.8</MoveSpeed>
       </statBases>
       <race>
-        <lifeStageAges>
-          <li>
-            <def>UndeadFullyFormed</def>
-            <minAge>0</minAge>
-            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
-            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
-            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
-          </li>
-          <li>
-            <def>UndeadFullyFormed</def>
-            <minAge>100</minAge>
-            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
-            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
-            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
-          </li>
-        </lifeStageAges>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
       </race>
-	  <tools>
-      <li>
-        <label>Arm</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>7</power>
-        <cooldownTime>2.5</cooldownTime>
-		<linkedBodyPartsGroup>Arm</linkedBodyPartsGroup>
-      </li>
-    </tools>
     </ThingDef>
     
     <PawnKindDef ParentName="NonCombatLightMechanoidKind">
@@ -210,36 +129,9 @@
         <MoveSpeed>4.5</MoveSpeed>
       </statBases>
       <race>
-        <lifeStageAges>
-          <li>
-            <def>UndeadFullyFormed</def>
-            <minAge>0</minAge>
-            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
-            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
-            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
-          </li>
-          <li>
-            <def>UndeadFullyFormed</def>
-            <minAge>100</minAge>
-            <soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
-            <soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
-            <soundCall>Pawn_Mech_Lifter_Call</soundCall>
-          </li>
-        </lifeStageAges>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
       </race>
-	  <tools>
-      <li>
-        <label>Arm</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>8</power>
-        <cooldownTime>2</cooldownTime>
-		<linkedBodyPartsGroup>Arm</linkedBodyPartsGroup>
-      </li>
-    </tools>
     </ThingDef>
     
     <PawnKindDef ParentName="NonCombatLightMechanoidKind">

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- Basic Nectomancer Controller -->
+	<Operation Class="PatchOperationAdd">
+	  <xpath>/Defs/ThingDef[@Name="BasePawn"]/comps</xpath>
+	  <value>
+		  <li Class="BMT_Undeads.CompProperties_Necromancer"/>
+	  </value>
+	</Operation>
+
+	<!-- ONLY FOR QUICK AI TEST -->
+	<!-- <Operation Class="PatchOperationAdd"> -->
+	  <!-- <xpath>/Defs/ThingDef[@Name="BasePawn"]/comps</xpath> -->
+	  <!-- <value> -->
+		  <!-- <li Class="BMT_Undeads.CompProperties_ControlledUndead"/> -->
+	  <!-- </value> -->
+	<!-- </Operation> -->
+
+</Patch>

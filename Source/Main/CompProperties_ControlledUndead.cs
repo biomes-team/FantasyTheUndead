@@ -12,7 +12,7 @@ namespace BMT_Undeads
 	public class CompProperties_ControlledUndead : CompProperties
 	{
 
-		public PawnKindDef defaultDryadPawnKindDef;
+		public MutantDef defaultMutantDef;
 
 		public string uniqueTag = "BMT_UNDEAD";
 
@@ -28,26 +28,13 @@ namespace BMT_Undeads
 
 		public CompProperties_ControlledUndead Props => (CompProperties_ControlledUndead)props;
 
-		public SubHumanWorkModeDef currentMode = null;
+		//public SubHumanWorkModeDef currentMode = null;
 
 		private Pawn undeadMaster;
 
+		public SubHumanWorkModeDef CurrentMode => undeadMaster.GetComp<CompNecromancer>()?.currentMode;
+
 		public bool Controlled => undeadMaster != null;
-
-		// [Unsaved(false)]
-		// private Pawn cachedConnectedPawn;
-
-		// public Pawn Master
-		// {
-		// get
-		// {
-		// if (parent is Pawn pawn && (cachedConnectedPawn == null || pawn.Faction != cachedConnectedPawn.Faction))
-		// {
-		// cachedConnectedPawn = pawn?.connections?.ConnectedThings.FirstOrDefault() is Pawn master ? master : null;
-		// }
-		// return cachedConnectedPawn;
-		// }
-		// }
 
 		public Pawn Master
 		{
@@ -57,27 +44,55 @@ namespace BMT_Undeads
 			}
 		}
 
-		public override void PostSpawnSetup(bool respawningAfterLoad)
-		{
-			base.PostSpawnSetup(respawningAfterLoad);
-			if (!respawningAfterLoad)
-			{
-				Pawn pawn = parent as Pawn;
-				if (pawn?.needs?.rest != null)
-				{
-					pawn.needs.rest.CurLevel = pawn.needs.rest.MaxLevel;
-				}
-				// ResetOverseerTick();
-			}
-		}
+		//public override void PostPostMake()
+  //      {
+  //          SetupWorkAI();
+  //      }
 
-		public override void PostDestroy(DestroyMode mode, Map previousMap)
+        private void SetupWorkAI()
+        {
+            if (Props.defaultMutantDef != null && parent is Pawn pawn)
+            {
+                MutantUtility.SetPawnAsMutantInstantly(pawn, Props.defaultMutantDef);
+				pawn.SetFaction(Faction.OfPlayer);
+                pawn.skills = new(pawn);
+				pawn.story = new(pawn);
+				pawn.workSettings = new(pawn);
+				pawn.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+				SetMaster(pawn.Map.mapPawns.AllHumanlike.First((colonist) => colonist.IsColonistPlayerControlled));
+				if (pawn.RaceProps.mechEnabledWorkTypes.NullOrEmpty())
+                {
+					return;
+                }
+                foreach (WorkTypeDef workType in pawn.RaceProps.mechEnabledWorkTypes)
+                {
+                    if (pawn.RaceProps.mechEnabledWorkTypes.Contains(workType))
+                    {
+                        pawn.workSettings.SetPriority(workType, 3);
+                    }
+                    else
+                    {
+                        pawn.workSettings.SetPriority(workType, 0);
+                    }
+                }
+            }
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            if (!respawningAfterLoad)
+			{
+				SetupWorkAI();
+			}
+        }
+
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
 		{
 			if (!Controlled)
 			{
 				return;
 			}
-			Pawn pawn = parent as Pawn;
+			//Master.
 		}
 
 		public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
@@ -86,45 +101,81 @@ namespace BMT_Undeads
 			{
 				return;
 			}
-			RemoveThisUndead(true);
+			RemoveThisUndead();
 			SetMaster(null);
 		}
 
-		public void RemoveThisUndead(bool gainMemory = false)
+		public void RemoveThisUndead()
 		{
-			Pawn pawn = parent as Pawn;
+			//Master.;
 		}
 
-		//public override IEnumerable<Gizmo> CompGetGizmosExtra()
-		//{
-		//	Pawn pawn = parent as Pawn;
-		//	if (!Controlled || pawn.Faction != Faction.OfPlayer)
-		//	{
-		//		yield break;
-		//	}
-		//	yield return new Command_Action
-		//	{
-		//		defaultLabel = "ChangeMode".Translate(),
-		//		defaultDesc = "WVC_XaG_CompGauranlenDryad_ChangeMode".Translate(),
-		//		icon = currentMode?.pawnKindDef != null ? Widgets.GetIconFor(currentMode.pawnKindDef.race) : Widgets.GetIconFor(pawn.kindDef.race),
-		//		action = delegate
-		//		{
-		//			Find.WindowStack.Add(new Dialog_ChangeDryadCaste(Gene_GauranlenConnection, this));
-		//		}
-		//	};
-		//	yield return new Command_Action
-		//	{
-		//		defaultLabel = "WVC_XaG_GeneDryadsSelectDryadQueen".Translate(),
-		//		defaultDesc = "WVC_XaG_GeneDryadsSelectDryadQueen_Desc".Translate(),
-		//		icon = ContentFinder<Texture2D>.Get("WVC/UI/XaG_General/UI_SelectDryadQueen"),
-		//		Order = -87f,
-		//		action = delegate
-		//		{
-		//			Find.Selector.ClearSelection();
-		//			Find.Selector.Select(undeadMaster);
-		//		}
-		//	};
-		//}
+		public override IEnumerable<Gizmo> CompGetGizmosExtra()
+		{
+			if (DebugSettings.ShowDevGizmos)
+			{
+				yield return new Command_Action
+				{
+					defaultLabel = "DEV: SetMaster" + (undeadMaster != null ? undeadMaster.Name : "None"),
+					action = delegate
+					{
+						Pawn pawn = parent as Pawn;
+						List<FloatMenuOption> list = new();
+						List<Pawn> mutants = pawn.Map.mapPawns.AllHumanlike.Where((master) => master.IsColonistPlayerControlled).ToList();
+						for (int i = 0; i < mutants.Count; i++)
+						{
+							Pawn geneSet = mutants[i];
+							list.Add(new FloatMenuOption(geneSet.LabelCap, delegate
+							{
+								SetMaster(geneSet);
+							}, orderInPriority: 0 - i));
+						}
+						Find.WindowStack.Add(new FloatMenu(list));
+					}
+				};
+				yield return new Command_Action
+				{
+					defaultLabel = "DEV: SetMutantDef",
+					action = delegate
+					{
+						Pawn pawn = parent as Pawn;
+						List<FloatMenuOption> list = new();
+						List<MutantDef> mutants = DefDatabase<MutantDef>.AllDefsListForReading;
+						for (int i = 0; i < mutants.Count; i++)
+						{
+							MutantDef geneSet = mutants[i];
+							list.Add(new FloatMenuOption(geneSet.LabelCap, delegate
+							{
+								MutantUtility.SetPawnAsMutantInstantly(pawn, geneSet);
+								pawn?.Drawer?.renderer?.SetAllGraphicsDirty();
+								SetMaster(pawn.Map.mapPawns.AllHumanlike.First((colonist) => colonist.IsColonistPlayerControlled));
+							}, orderInPriority: 0 - i));
+						}
+						Find.WindowStack.Add(new FloatMenu(list));
+					}
+				};
+				yield return new Command_Action
+				{
+					defaultLabel = "DEV: SetMutantRotStage",
+					action = delegate
+					{
+						Pawn pawn = parent as Pawn;
+						List<FloatMenuOption> list = new();
+						List<RotStage> mutants = new() { RotStage.Dessicated, RotStage.Fresh, RotStage.Rotting };
+						for (int i = 0; i < mutants.Count; i++)
+						{
+							RotStage geneSet = mutants[i];
+							list.Add(new FloatMenuOption(geneSet.ToString(), delegate
+							{
+								pawn.mutant.rotStage = geneSet;
+								pawn?.Drawer?.renderer?.SetAllGraphicsDirty();
+							}, orderInPriority: 0 - i));
+						}
+						Find.WindowStack.Add(new FloatMenu(list));
+					}
+				};
+			}
+		}
 
 		public void SetMaster(Pawn master)
 		{
@@ -134,7 +185,7 @@ namespace BMT_Undeads
 		public override void PostExposeData()
 		{
 			base.PostExposeData();
-			Scribe_Defs.Look(ref currentMode, "currentMode_" + Props.uniqueTag);
+			//Scribe_Defs.Look(ref currentMode, "currentMode_" + Props.uniqueTag);
 			Scribe_References.Look(ref undeadMaster, "dryadMaster_" + Props.uniqueTag);
 		}
 

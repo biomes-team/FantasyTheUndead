@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="BasePawn" Name="BMT_BaseUndead" Abstract="True">
+  <!-- For Undeads used AnimalThingBase. This is necessary for better compatibility. Since the AI ​​is set via MutantDef, the base Undead is created in the same way as an animal. -->
+  <ThingDef ParentName="AnimalThingBase" Name="BMT_BaseUndead" Abstract="True">
 	<!-- <soundImpactDefault>BulletImpact_Metal</soundImpactDefault> -->
 	<statBases>
 	  <MarketValue>1200</MarketValue>
@@ -18,6 +19,10 @@
 	<tradeability>None</tradeability>
 	<race>
 	  <!-- <fleshType>Mechanoid</fleshType> -->
+	  <herdAnimal>false</herdAnimal>
+	  <intelligence>ToolUser</intelligence>
+	  <body>Human</body>
+	  <!-- <predator>true</predator> -->
 	  <needsRest>false</needsRest>
 	  <hasGenders>false</hasGenders>
 	  <foodType>None</foodType>
@@ -27,8 +32,49 @@
 	  <!-- <nameGenerator>NamerMech</nameGenerator> -->
 	  <!-- <thinkTreeConstant>MechConstant</thinkTreeConstant> -->
 	  <canFlyInVacuum>false</canFlyInVacuum>
+	  <isImmuneToInfections>true</isImmuneToInfections>
+	  <bleedRateFactor>0.0</bleedRateFactor>
+	  <lifeStageAges>
+		  <li>
+			<def>BMT_UndeadFullyFormed</def>
+			<minAge>0</minAge>
+			<soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+			<soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+			<soundCall>Pawn_Mech_Lifter_Call</soundCall>
+		  </li>
+		  <li>
+			<def>BMT_UndeadFullyFormed</def>
+			<minAge>100</minAge>
+			<soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+			<soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+			<soundCall>Pawn_Mech_Lifter_Call</soundCall>
+		  </li>
+	  </lifeStageAges>
 	</race>
+	<tools>
+	  <li>
+		<label>Arm</label>
+		<capacities>
+		  <li>Blunt</li>
+		</capacities>
+		<power>7</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+	  </li>
+	  <li>
+		<label>Arm</label>
+		<capacities>
+		  <li>Blunt</li>
+		</capacities>
+		<power>7</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+	  </li>
+	</tools>
 	<comps>
+	  <li Class="BMT_Undeads.CompProperties_ControlledUndead">
+		<defaultMutantDef>BMT_Undead</defaultMutantDef>
+	  </li>
 	  <!-- <li Class="CompProperties_CanBeDormant"> -->
 		<!-- <compClass>CompMechanoid</compClass> -->
 	  <!-- </li> -->

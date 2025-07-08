@@ -14,7 +14,7 @@ namespace BMT_Undeads
 	{
 		protected override bool Satisfied(Pawn pawn)
 		{
-			return pawn.IsColonySubhuman;
+			return pawn.GetComp<CompControlledUndead>()?.Controlled == true;
 		}
 	}
 
@@ -36,7 +36,7 @@ namespace BMT_Undeads
 				return false;
 			}
 			// TEMP
-			return pawn.GetComp<CompControlledUndead>()?.currentMode == workMode;
+			return pawn.GetComp<CompControlledUndead>()?.CurrentMode == workMode;
 		}
 	}
 

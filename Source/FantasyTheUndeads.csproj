@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Main\CompProperties_Necromancer.cs" />
     <Compile Include="Main\CompProperties_ControlledUndead.cs" />
     <Compile Include="Main\ThinkNodes.cs" />
     <Compile Include="Main\SubHumanWorkModeDef.cs" />

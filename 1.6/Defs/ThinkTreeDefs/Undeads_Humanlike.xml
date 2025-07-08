@@ -82,7 +82,7 @@
 			  
 			  <!-- Work modes -->
 			  <li Class="BMT_Undeads.ThinkNode_ConditionalWorkMode">
-				<workMode>Work</workMode>
+				<workMode>BMT_Work</workMode>
 				<subNodes>
 				  <li Class="JobGiver_AIFightEnemies">
 					<targetAcquireRadius>65</targetAcquireRadius>
@@ -115,7 +115,7 @@
 				</subNodes>
 			  </li>
 			  <li Class="BMT_Undeads.ThinkNode_ConditionalWorkMode">
-				<workMode>Escort</workMode>
+				<workMode>BMT_Escort</workMode>
 				<subNodes>
 				  <li Class="JobGiver_ExitMapFollowOverseer" />
 				  <li Class="JobGiver_AIDefendOverseer" />
