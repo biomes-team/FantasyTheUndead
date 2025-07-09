@@ -28,12 +28,18 @@
 	  <foodType>None</foodType>
 	  <baseBodySize>1</baseBodySize>
 	  <lifeExpectancy>2500</lifeExpectancy>
-	  <!-- <bloodDef>Filth_MachineBits</bloodDef> -->
+	  <bloodDef>Filth_MachineBits</bloodDef>
 	  <!-- <nameGenerator>NamerMech</nameGenerator> -->
 	  <!-- <thinkTreeConstant>MechConstant</thinkTreeConstant> -->
 	  <canFlyInVacuum>false</canFlyInVacuum>
 	  <isImmuneToInfections>true</isImmuneToInfections>
 	  <bleedRateFactor>0.0</bleedRateFactor>
+	  <animalType>Dryad</animalType> <!-- Needed to filter the pawn from unnecessary events. -->
+	  <canBePredatorPrey>false</canBePredatorPrey>
+	  <canReleaseToWild>false</canReleaseToWild>
+	  <trainability>None</trainability>
+	  <showTrainables>false</showTrainables>
+	  <hideTrainingTab>true</hideTrainingTab>
 	  <lifeStageAges>
 		  <li>
 			<def>BMT_UndeadFullyFormed</def>
@@ -51,6 +57,9 @@
 		  </li>
 	  </lifeStageAges>
 	</race>
+	<tradeTags>
+	  <li>AnimalDryad</li> <!-- Most mods filter dryads from trading, this is a necessary tag to avoid unplanned spawns -->
+	</tradeTags>
 	<tools>
 	  <li>
 		<label>Arm</label>
@@ -72,6 +81,7 @@
 	  </li>
 	</tools>
 	<comps>
+	  <!-- In Dev -->
 	  <li Class="BMT_Undeads.CompProperties_ControlledUndead">
 		<defaultMutantDef>BMT_Undead</defaultMutantDef>
 	  </li>
