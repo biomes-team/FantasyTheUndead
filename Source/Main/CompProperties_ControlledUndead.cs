@@ -59,6 +59,7 @@ namespace BMT_Undeads
 				pawn.story = new(pawn);
 				pawn.workSettings = new(pawn);
 				pawn.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+				pawn.drafter = new(pawn);
 				SetMaster(pawn.Map.mapPawns.AllHumanlike.First((colonist) => colonist.IsColonistPlayerControlled));
 				if (pawn.RaceProps.mechEnabledWorkTypes.NullOrEmpty())
                 {

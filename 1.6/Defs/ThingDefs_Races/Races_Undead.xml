@@ -87,7 +87,7 @@
 	<destroyGearOnDrop>true</destroyGearOnDrop>
 	<canStrip>false</canStrip>
 	<!-- <minGenerationAge>200</minGenerationAge> -->
-	<!-- <forceNormalGearQuality>true</forceNormalGearQuality> -->
+	<forceNormalGearQuality>true</forceNormalGearQuality>
 	<weaponMoney>9999~9999</weaponMoney>
 	<weaponTags></weaponTags>
   </PawnKindDef>

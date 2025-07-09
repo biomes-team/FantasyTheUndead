@@ -3,7 +3,7 @@
 
 	<!-- Basic Nectomancer Controller -->
 	<Operation Class="PatchOperationAdd">
-	  <xpath>/Defs/ThingDef[@Name="BasePawn"]/comps</xpath>
+	  <xpath>/Defs/ThingDef[@Name="Human"]/comps</xpath>
 	  <value>
 		  <li Class="BMT_Undeads.CompProperties_Necromancer"/>
 	  </value>

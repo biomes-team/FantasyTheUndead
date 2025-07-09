@@ -9,7 +9,7 @@
     <graphicData>
       <drawSize>0.65</drawSize>
     </graphicData>
-    <equippedDistanceOffset >-0.14</equippedDistanceOffset >
+    <equippedDistanceOffset>-0.14</equippedDistanceOffset>
     <tools>
       <li>
         <label>barrel</label>
@@ -89,6 +89,8 @@
     <weaponTags>
       <li>BMT_RustedAxe</li>
     </weaponTags>
+    <recipeMaker IsNull="True"/>
+    <smeltable>False</smeltable>
     <tools>
       <li>
         <label>handle</label>
@@ -125,8 +127,10 @@
     <weaponTags>
       <li>BMT_RustedLongsword</li>
     </weaponTags>
-    <costStuffCount>100</costStuffCount>
-    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <!-- <costStuffCount>100</costStuffCount> -->
+    <!-- <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags> -->
+    <recipeMaker IsNull="True"/>
+    <smeltable>False</smeltable>
     <statBases>
       <Mass>2</Mass>
     </statBases>
