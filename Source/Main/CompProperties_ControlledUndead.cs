@@ -21,6 +21,11 @@ namespace BMT_Undeads
 			compClass = typeof(CompControlledUndead);
 		}
 
+		//public override void ResolveReferences(ThingDef parentDef)
+		//{
+		//	parentDef.inspectorTabs.Remove(typeof(ITab_Pawn_Character));
+		//}
+
 	}
 
 	public class CompControlledUndead : ThingComp
@@ -49,37 +54,66 @@ namespace BMT_Undeads
   //          SetupWorkAI();
   //      }
 
-        private void SetupWorkAI()
-        {
-            if (Props.defaultMutantDef != null && parent is Pawn pawn)
+		private void SetupWorkAI()
+		{
+			if (Props.defaultMutantDef != null && parent is Pawn undead)
             {
-                MutantUtility.SetPawnAsMutantInstantly(pawn, Props.defaultMutantDef);
-				pawn.SetFaction(Faction.OfPlayer);
-                pawn.skills = new(pawn);
-				pawn.story = new(pawn);
-				pawn.workSettings = new(pawn);
-				pawn.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
-				pawn.drafter = new(pawn);
-				SetMaster(pawn.Map.mapPawns.AllHumanlike.First((colonist) => colonist.IsColonistPlayerControlled));
-				if (pawn.RaceProps.mechEnabledWorkTypes.NullOrEmpty())
+                MutantUtility.SetPawnAsMutantInstantly(undead, Props.defaultMutantDef);
+                undead.SetFaction(Faction.OfPlayer);
+                undead.skills = new(undead);
+                if (undead.skills != null)
                 {
-					return;
+                    // fixed skills setup
+                    SetupSkills(undead);
                 }
-                foreach (WorkTypeDef workType in pawn.RaceProps.mechEnabledWorkTypes)
+                undead.story = new(undead);
+                if (undead.story != null)
                 {
-                    if (pawn.RaceProps.mechEnabledWorkTypes.Contains(workType))
-                    {
-                        pawn.workSettings.SetPriority(workType, 3);
-                    }
-                    else
-                    {
-                        pawn.workSettings.SetPriority(workType, 0);
-                    }
+                    // story is required to use skills. Child27 is the default without affecting skills.
+                    undead.story.Childhood = MiscDefOf.Child27;
+                    undead.story.Adulthood = null;
+                }
+                undead.workSettings = new(undead);
+                undead.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+                undead.drafter = new(undead);
+                SetMaster(undead.Map.mapPawns.AllHumanlike.First((colonist) => colonist.IsColonistPlayerControlled));
+                SetupWork(undead);
+            }
+        }
+
+        private static void SetupWork(Pawn undead)
+        {
+            foreach (WorkTypeDef workType in DefDatabase<WorkTypeDef>.AllDefsListForReading)
+            {
+                if (!undead.RaceProps.mechEnabledWorkTypes.NullOrEmpty() && undead.RaceProps.mechEnabledWorkTypes.Contains(workType))
+                {
+                    undead.workSettings.SetPriority(workType, 3);
+                }
+                else
+                {
+                    undead.workSettings.SetPriority(workType, 0);
                 }
             }
         }
 
-        public override void PostSpawnSetup(bool respawningAfterLoad)
+        public static void SetupSkills(Pawn pawn)
+		{
+			foreach (SkillRecord skill in pawn.skills.skills.ToList())
+			{
+				pawn.skills.skills.Remove(skill);
+				SkillRecord item = new(pawn, skill.def)
+				{
+					levelInt = pawn.RaceProps.mechFixedSkillLevel,
+					passion = Passion.None,
+					xpSinceLastLevel = 0,
+					xpSinceMidnight = 0
+				};
+				item.xpSinceLastLevel = item.XpRequiredForLevelUp / 2;
+				pawn.skills.skills.Add(item);
+			}
+		}
+
+		public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             if (!respawningAfterLoad)
 			{
@@ -94,6 +128,25 @@ namespace BMT_Undeads
 				return;
 			}
 			//Master.
+		}
+
+		private int nextTick = 240;
+		public override void CompTickInterval(int delta)
+		{
+			nextTick -= delta;
+			if (nextTick > 0)
+            {
+				return;
+            }
+			Debug();
+			nextTick = 55543;
+		}
+
+		public void Debug()
+		{
+			Pawn undead = parent as Pawn;
+			SetupWork(undead);
+			SetupSkills(undead);
 		}
 
 		public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
