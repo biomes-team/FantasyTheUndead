@@ -4,7 +4,7 @@
 <Defs>
 
   <ThinkTreeDef>
-	<defName>BMT_Undead_Humanlike</defName>
+	<defName>BMT_Undead</defName>
 	<thinkRoot Class="ThinkNode_Priority">
 	  <subNodes>
 		<!-- Despawned -->
@@ -171,5 +171,35 @@
 	  </subNodes>
 	</thinkRoot>
   </ThinkTreeDef>
-  
+
+  <ThinkTreeDef>
+	<defName>BMT_UndeadConstant</defName>
+	<thinkRoot Class="ThinkNode_Priority">
+	  <subNodes>
+		<!-- Despawned -->
+		<li Class="ThinkNode_Subtree">
+		  <treeDef>Despawned</treeDef>
+		</li>
+
+		<li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+		  <subNodes>
+			<!-- Join auto joinable caravan -->
+			<li Class="ThinkNode_Subtree">
+			  <treeDef>JoinAutoJoinableCaravan</treeDef>
+			</li>
+		  </subNodes>
+		</li>
+
+		<li Class="ThinkNode_ConditionalCanDoLordJobNow">
+		  <subNodes>
+			<!-- Lord directives -->
+			<li Class="ThinkNode_Subtree">
+			  <treeDef>LordDutyConstant</treeDef>
+			</li>
+		  </subNodes>
+		</li>
+	  </subNodes>
+	</thinkRoot>
+  </ThinkTreeDef>
+
 </Defs>
