@@ -50,7 +50,7 @@ namespace BMT_Undeads
 		public void Energy()
         {
 			if (parent is Pawn pawn && pawn.needs?.energy != null)
-            {
+			{
 				pawn.needs.energy.CurLevel = pawn.needs.energy.MaxLevel;
 			}
         }

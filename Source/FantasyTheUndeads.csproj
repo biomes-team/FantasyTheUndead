@@ -39,7 +39,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.6.4516-beta</Version>
+      <Version>1.6.4535</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <Version>2.3.6</Version>
@@ -51,6 +51,7 @@
     <Folder Include="AI\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Harmony\Harmony_Patch.cs" />
     <Compile Include="Main\DefOf.cs" />
     <Compile Include="Main\CompProperties_Necromancer.cs" />
     <Compile Include="Main\CompProperties_ControlledUndead.cs" />
