@@ -1,20 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- For Undeads used AnimalThingBase. This is necessary for better compatibility. Since the AI ​​is set via MutantDef, the base Undead is created in the same way as an animal. -->
-  <ThingDef ParentName="AnimalThingBase" Name="BMT_BaseUndead" Abstract="True">
+  <ThingDef ParentName="BaseMechanoid" Name="BMT_BaseUndead" Abstract="True">
 	<!-- <soundImpactDefault>BulletImpact_Metal</soundImpactDefault> -->
 	<statBases>
 	  <MarketValue>1200</MarketValue>
-	  <PsychicSensitivity>0.2</PsychicSensitivity>
-	  <ToxicResistance>1</ToxicResistance>
+	  <!-- <PsychicSensitivity>0.2</PsychicSensitivity> -->
+	  <!-- <ToxicResistance>1</ToxicResistance> -->
+	  <!-- <ComfyTemperatureMin>-100</ComfyTemperatureMin> -->
+	  <!-- <ComfyTemperatureMax>250</ComfyTemperatureMax> -->
+	  <!-- <MeatAmount>0</MeatAmount> -->
 	  <Flammability>1</Flammability>
-	  <ComfyTemperatureMin>-100</ComfyTemperatureMin>
-	  <ComfyTemperatureMax>250</ComfyTemperatureMax>
-	  <MeatAmount>0</MeatAmount>
-	  <!-- <ArmorRating_Heat>2.00</ArmorRating_Heat> -->
-	  <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
-	  <Wildness>0</Wildness>
+	  <ArmorRating_Heat>0.00</ArmorRating_Heat>
+	  <!-- <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance> -->
+	  <!-- <Wildness>0</Wildness> -->
+	  <MechEnergyUsageFactor>0</MechEnergyUsageFactor>  <!-- infinite energy. Do not touch -->
+	  <MechEnergyLossPerHP>0</MechEnergyLossPerHP>  <!-- infinite energy. Do not touch -->
+	  <WastepacksPerRecharge>0</WastepacksPerRecharge>  <!-- infinite energy. Do not touch -->
 	  <!-- Work -->
 	  <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
 	  <FoodPoisonChance>0</FoodPoisonChance>
@@ -38,31 +40,30 @@
 	</statBases>
 	<tradeability>None</tradeability>
 	<race>
-	  <!-- <fleshType>Mechanoid</fleshType> -->
-	  <herdAnimal>false</herdAnimal>
+	  <!-- <herdAnimal>false</herdAnimal> -->
 	  <intelligence>ToolUser</intelligence>
 	  <body>Human</body>
-	  <!-- <predator>true</predator> -->
-	  <needsRest>false</needsRest>
-	  <hasGenders>false</hasGenders>
-	  <foodType>None</foodType>
+	  <bloodDef>Filth_CorpseBile</bloodDef>
+	  <thinkTreeMain>BMT_Undead</thinkTreeMain>
 	  <baseBodySize>1</baseBodySize>
-	  <lifeExpectancy>2500</lifeExpectancy>
-	  <bloodDef>Filth_MachineBits</bloodDef>
-	  <!-- <nameGenerator>NamerMech</nameGenerator> -->
-	  <!-- <thinkTreeConstant>MechConstant</thinkTreeConstant> -->
 	  <canFlyInVacuum>false</canFlyInVacuum>
 	  <isImmuneToInfections>true</isImmuneToInfections>
 	  <bleedRateFactor>0.0</bleedRateFactor>
-	  <animalType>Dryad</animalType> <!-- Needed to filter the pawn from unnecessary events. -->
-	  <canBePredatorPrey>false</canBePredatorPrey>
-	  <canReleaseToWild>false</canReleaseToWild>
-	  <trainability>None</trainability>
-	  <showTrainables>false</showTrainables>
-	  <hideTrainingTab>true</hideTrainingTab>
-	  <playerCanChangeMaster>false</playerCanChangeMaster>
-	  <manhunterOnDamageChance>1</manhunterOnDamageChance>
-	  <petness>0</petness>
+	  <maxMechEnergy>1000</maxMechEnergy>  <!-- infinite energy. Do not touch -->
+	  <!-- <needsRest>false</needsRest> -->
+	  <!-- <hasGenders>false</hasGenders> -->
+	  <!-- <foodType>None</foodType> -->
+	  <!-- <lifeExpectancy>2500</lifeExpectancy> -->
+	  <!-- <bloodDef>Filth_MachineBits</bloodDef> -->
+	  <!-- <animalType>Dryad</animalType> -->
+	  <!-- <canBePredatorPrey>false</canBePredatorPrey> -->
+	  <!-- <canReleaseToWild>false</canReleaseToWild> -->
+	  <!-- <trainability>None</trainability> -->
+	  <!-- <showTrainables>false</showTrainables> -->
+	  <!-- <hideTrainingTab>true</hideTrainingTab> -->
+	  <!-- <playerCanChangeMaster>false</playerCanChangeMaster> -->
+	  <!-- <manhunterOnDamageChance>1</manhunterOnDamageChance> -->
+	  <!-- <petness>0</petness> -->
 	  <lifeStageAges>
 		  <li>
 			<def>BMT_UndeadFullyFormed</def>
@@ -92,15 +93,16 @@
 	  <!-- <li MayRequire="Ludeon.RimWorld.Biotech">ITab_Pawn_Feeding</li> -->
 	  <!-- <li MayRequire="Ludeon.RimWorld.Biotech">ITab_Genes</li> -->
 	  <!-- <li MayRequire="Ludeon.RimWorld.Biotech">ITab_GenesPregnancy</li> -->
-	  <li MayRequire="Ludeon.RimWorld.Anomaly">ITab_Entity</li>
+	  <!-- <li MayRequire="Ludeon.RimWorld.Anomaly">ITab_Entity</li> -->
 	  <li>ITab_Pawn_FormingCaravan</li>
 	  <li>ITab_Pawn_Gear</li>
 	  <li>ITab_Pawn_Log</li>
 	</inspectorTabs>
-	<tradeTags>
-	  <li>BMT_UndeadGeneral</li>
-	  <li>AnimalDryad</li> <!-- Most mods filter dryads from trading, this is a necessary tag to avoid unplanned spawns -->
-	</tradeTags>
+	<!-- temp butcher product -->
+	<butcherProducts>
+	  <Steel>30</Steel>
+	  <Plasteel>10</Plasteel>
+	</butcherProducts>
 	<tools>
 	  <li>
 		<label>Arm</label>
@@ -123,16 +125,11 @@
 	</tools>
 	<comps>
 	  <!-- In Dev -->
-	  <li Class="BMT_Undeads.CompProperties_ControlledUndead">
-		<defaultMutantDef>BMT_Undead</defaultMutantDef>
-	  </li>
-	  <!-- <li Class="CompProperties_CanBeDormant"> -->
-		<!-- <compClass>CompMechanoid</compClass> -->
-	  <!-- </li> -->
+	  <li Class="BMT_Undeads.CompProperties_ControlledUndead"/>
 	</comps>
   </ThingDef>
 
-  <PawnKindDef Name="BMT_BaseUndeadKind" Abstract="True">
+  <PawnKindDef ParentName="BaseMechanoidKind" Name="BMT_BaseUndeadKind" Abstract="True">
 	<!-- <defaultFactionDef>Mechanoid</defaultFactionDef> -->
 	<aiAvoidCover>true</aiAvoidCover>
 	<destroyGearOnDrop>true</destroyGearOnDrop>

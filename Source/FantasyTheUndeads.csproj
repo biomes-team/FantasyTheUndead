@@ -47,17 +47,14 @@
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="AI\" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\DefOf.cs" />
     <Compile Include="Main\CompProperties_Necromancer.cs" />
     <Compile Include="Main\CompProperties_ControlledUndead.cs" />
-    <Compile Include="AI\JobGiver_AIDefendNecromancer.cs" />
-    <Compile Include="AI\JobGiver_AIFollowNecromancer.cs" />
-    <Compile Include="AI\JobGiver_WanderNecromancer.cs" />
-    <Compile Include="AI\ThinkNode_ConditionalPlayerControlledSubHuman.cs" />
     <Compile Include="Main\SubHumanWorkModeDef.cs" />
-    <Compile Include="AI\ThinkNode_ConditionalWorkMode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

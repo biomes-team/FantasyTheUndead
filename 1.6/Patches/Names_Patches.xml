@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationReplace">
+	  <xpath>/Defs/ThingCategoryDef[defName="CorpsesMechanoid"]/label</xpath>
+	  <value>
+		  <label>non-flesh corpses</label>
+	  </value>
+	</Operation>
+
+</Patch>
