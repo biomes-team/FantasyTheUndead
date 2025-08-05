@@ -62,6 +62,39 @@
     </verbs>
   </ThingDef>
   
+    <ThingDef ParentName="LightUndeadRangedWeapon">
+    <defName>BMT_RotBow</defName>
+    <label>rotting bow</label>
+    <description>An old and worn longbow that smells of decay. It is used by rotting rangers.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/BowShort</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Small</soundInteract>
+    <statBases>
+      <Mass>1.5</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.75</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>BMT_RotBow</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Arrow_Short</defaultProjectile>
+        <warmupTime>1.25</warmupTime>
+        <range>39.9</range>
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+  </ThingDef>
+  
   <ThingDef Name="BaseProjectileNeolithic" Abstract="True">
     <category>Projectile</category>
     <tickerType>Normal</tickerType>
@@ -73,6 +106,39 @@
     <graphicData>
       <shaderType>Transparent</shaderType>
     </graphicData>
+  </ThingDef>
+  
+    <ThingDef ParentName="LightUndeadRangedWeapon">
+    <defName>BMT_InitiateStaff</defName>
+    <label>initiate staff</label>
+    <description>An arcane staff used by undying initiates.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/BowShort</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Small</soundInteract>
+    <statBases>
+      <Mass>1.5</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>BMT_InitiateStaff</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Arrow_Short</defaultProjectile>
+        <warmupTime>1.55</warmupTime>
+        <range>29.9</range>
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
   </ThingDef>
 
 <!-- Melee -->
@@ -161,5 +227,44 @@
         <cooldownTime>2.6</cooldownTime>
       </li>
     </tools>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>BMT_RustyPitchfork</defName>
+    <label>rusty pitchfork</label>
+    <description>An old rusty pitchfork used by zombie farmers. It's not the best weapon but it works in a pinch.</description>
+    <techLevel>Medieval</techLevel>
+    <statBases>
+      <WorkToMake>7000</WorkToMake>
+      <Mass>1.5</Mass>
+    </statBases>
+    <weaponTags>
+      <li>BMT_RustyPitchfork</li>
+    </weaponTags>
+    <recipeMaker IsNull="True"/>
+    <smeltable>False</smeltable>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/Axe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
   </ThingDef>
 </Defs>

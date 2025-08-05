@@ -5,13 +5,15 @@
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_UndeadPeasant</defName>
       <label>peasant</label>
-      <description>A simpleminded risen peasant. They are weak in combat but can do dumb labor.</description>
+      <description>A simpleminded risen peasant. They are weak in combat but can do dumb labor and move nearly as fast as living humans.</description>
       <statBases>
-        <MoveSpeed>3.0</MoveSpeed>
+        <MoveSpeed>4.25</MoveSpeed>
       </statBases>
       <race>
         <mechEnabledWorkTypes>
           <li>Hauling</li>
+		  <li>Cleaning</li>
+		  <li>BasicWorker</li>
         </mechEnabledWorkTypes>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
@@ -47,7 +49,11 @@
       <label>bone arbalister</label>
       <description>A lightly armored zombie armed with an arbalest. It is best suited to medium range fighting.</description>
       <statBases>
-        <MoveSpeed>3.0</MoveSpeed>
+        <MoveSpeed>4.0</MoveSpeed>
+		<Flammability>0.10</Flammability>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.20</ArmorRating_Sharp>		
+		<ArmorRating_Heat>2.00</ArmorRating_Heat>
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -80,13 +86,15 @@
       </weaponTags>
     </PawnKindDef>
 	
-	    <!-- Zombie Axeman -->  
+	<!-- Zombie Axeman -->  
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_RottingAxeman</defName>
       <label>rotting axeman</label>
-      <description>A zombie warrior that wields a large rusty axe. Due to its inability to feel pain, it is only lightly armored. It tends to be used on the front lines.</description>
+      <description>A zombie warrior that wields a large rusty axe. Due to its inability to feel pain, it is only lightly armored. It tends to be used on the front lines and for cutting plants.</description>
       <statBases>
         <MoveSpeed>2.8</MoveSpeed>
+		<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.25</ArmorRating_Sharp>		
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -98,6 +106,9 @@
       <defName>BMT_RottingAxeman</defName>
       <label>rotting axeman</label>
       <race>BMT_RottingAxeman</race>
+        <mechEnabledWorkTypes>
+          <li>PlantCutting</li>
+        </mechEnabledWorkTypes>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -120,13 +131,15 @@
     </PawnKindDef>
 	
 	
-		    <!-- Risen Footsoldier -->  
+	<!-- Risen Footsoldier -->  
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_RisenFootsoldier</defName>
       <label>risen footsoldier</label>
       <description>A skeletal fighter wearing rusty armor and wielding a large longsword. Their attacks are slow but devastating against targets with little to no armor.</description>
       <statBases>
-        <MoveSpeed>4.5</MoveSpeed>
+        <MoveSpeed>4.0</MoveSpeed>
+		<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.25</ArmorRating_Sharp>	
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -157,5 +170,298 @@
 	   <weaponTags>
         <li>BMT_RustedLongsword</li>
       </weaponTags>
+    </PawnKindDef>
+
+
+    <!-- Bloater -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_Bloater</defName>
+      <label>bloater</label>
+      <description>A disgusting and bulging wretch of an undead that produces a toxic and acidic explosion on death. Its limited melee attacks sometimes splatter acid from burst pustules onto enemies.</description>
+      <statBases>
+        <MoveSpeed>4.0</MoveSpeed>
+      </statBases>
+	  	<tools>
+	  <li>
+		<label>Arm</label>
+		<capacities>
+		  <li>Blunt</li>
+		</capacities>
+		<power>7</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Stun</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		  <li>
+			<def>AcidBurn</def>
+			<amount>5</amount>
+			<chance>0.5</chance>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	  <li>
+		<label>Arm</label>
+		<capacities>
+		  <li>Blunt</li>
+		</capacities>
+		<power>7</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Stun</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		  <li>
+			<def>AcidBurn</def>
+			<amount>5</amount>
+			<chance>0.5</chance>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	</tools>
+      <race>
+	    <deathAction>
+			<workerClass>DeathActionWorker_ToxCloud</workerClass>
+        </deathAction>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+    </ThingDef>
+    
+
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_Bloater</defName>
+      <label>bloater</label>
+      <race>BMT_Bloater</race>
+	  <combatPower>80</combatPower>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+
+
+    <!-- Rotting Ranger -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_RottingRanger</defName>
+      <label>rotting ranger</label>
+      <description>An undead bowman that has a symbiotic relationship with plants</description>
+      <statBases>
+        <MoveSpeed>4.25</MoveSpeed>
+      </statBases>
+      <race>
+        <mechEnabledWorkTypes>
+          <li>Hunting</li>
+        </mechEnabledWorkTypes>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_RottingRanger</defName>
+      <label>rotting ranger</label>
+      <race>BMT_RottingRanger</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	  <weaponTags>
+        <li>BMT_RotBow</li>
+      </weaponTags>
+    </PawnKindDef>
+
+
+    <!-- Festering Farmer -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_FesteringFarmer</defName>
+      <label>festering farmer</label>
+      <description>A zombie farmer. It can do plant work and basic animal tasks, such as shearing and milking.</description>
+      <statBases>
+        <MoveSpeed>4.25</MoveSpeed>
+      </statBases>
+      <race>
+        <mechEnabledWorkTypes>
+          <li>PlantCutting</li>
+          <li>Growing</li>
+		  <li>Handling</li>
+        </mechEnabledWorkTypes>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_FesteringFarmer</defName>
+      <label>festering farmer</label>
+      <race>BMT_FesteringFarmer</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	<weaponTags>
+      <li>BMT_RustyPitchfork</li>
+    </weaponTags>
+    </PawnKindDef>
+	
+	    <!-- Ironbones -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_Ironbones</defName>
+      <label>ironbones</label>
+      <description>A risen skeleton whose bones are fully encased in jagged metal. They are highly resistant to damage but move very slowly.</description>
+      <statBases>
+        <MoveSpeed>4.25</MoveSpeed>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+	  <tools>
+	  <li>
+		<label>arm spikes</label>
+		<capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+		</capacities>
+		<power>12</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+	  </li>
+	  <li>
+		<label>arm spikes</label>
+		<capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+		</capacities>
+		<power>12</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+	  </li>
+	  <li>
+		<label>torso spikes</label>
+		<capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+		</capacities>
+		<power>14</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
+	  </li>
+	  <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+	</tools>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_Ironbones</defName>
+      <label>ironbones</label>
+      <race>BMT_Ironbones</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+	
+	    <!-- Undying Initiate -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_UndyingInitiate</defName>
+      <label>undying initiate</label>
+      <description>A slightly more intelligent zombie capable of doing simple magical attacks.</description>
+      <statBases>
+        <MoveSpeed>4.0</MoveSpeed>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_UndyingInitiate</defName>
+      <label>undying initiate</label>
+      <race>BMT_UndyingInitiate</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+		<weaponTags>
+			<li>BMT_InitiateStaff</li>
+		</weaponTags>
     </PawnKindDef>
 </Defs>

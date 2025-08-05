@@ -5,7 +5,7 @@
 	<!-- <soundImpactDefault>BulletImpact_Metal</soundImpactDefault> -->
 	<statBases>
 	  <MarketValue>1200</MarketValue>
-	  <!-- <PsychicSensitivity>0.2</PsychicSensitivity> -->
+	  <PsychicSensitivity>0.1</PsychicSensitivity>
 	  <!-- <ToxicResistance>1</ToxicResistance> -->
 	  <!-- <ComfyTemperatureMin>-100</ComfyTemperatureMin> -->
 	  <!-- <ComfyTemperatureMax>250</ComfyTemperatureMax> -->
@@ -33,6 +33,7 @@
 	  <ButcheryFleshSpeed>0.50</ButcheryFleshSpeed>
 	  <ButcheryMechanoidSpeed>0.50</ButcheryMechanoidSpeed>
 	  <CleaningSpeed>0.50</CleaningSpeed>
+	  <AnimalGatherSpeed>0.50</AnimalGatherSpeed>
 	  <!-- = -->
 	  <MedicalSurgerySuccessChance>2.0</MedicalSurgerySuccessChance>
 	  <ConstructSuccessChance>2.0</ConstructSuccessChance>
