@@ -27,14 +27,14 @@
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
@@ -112,14 +112,14 @@
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Axeman/Axeman</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Axeman/Axeman</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
@@ -283,14 +283,14 @@
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
@@ -309,6 +309,8 @@
       <description>A zombie farmer. It can do plant work and basic animal tasks, such as shearing and milking.</description>
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
+		<PlantWorkSpeed>0.80</PlantWorkSpeed>
+		<AnimalGatherSpeed>0.75</AnimalGatherSpeed>
       </statBases>
       <race>
         <mechEnabledWorkTypes>
@@ -316,6 +318,9 @@
           <li>Growing</li>
 		  <li>Handling</li>
         </mechEnabledWorkTypes>
+        <mechWorkTypePriorities>
+          <PlantCutting>2</PlantCutting>
+        </mechWorkTypePriorities>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
       </race>
@@ -328,14 +333,14 @@
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Farmer/Farmer</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Farmer/Farmer</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
@@ -463,5 +468,152 @@
 		<weaponTags>
 			<li>BMT_InitiateStaff</li>
 		</weaponTags>
+    </PawnKindDef>
+	
+	
+	    <!-- Rot Hound -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_RotHound</defName>
+      <label>rot hound</label>
+      <description>Reanimated hounds that are undyingly loyal. Packs are often used by dog-loving necromancers to tear apart enemies or nuzzle loved ones.</description>
+      <statBases>
+        <MoveSpeed>5.0</MoveSpeed>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<nuzzleMtbHours>12</nuzzleMtbHours>
+		<body>QuadrupedAnimalWithPawsAndTail</body>
+      </race>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>12</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>12</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>razorfangs</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.9</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>12</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_RotHound</defName>
+      <label>rot hound</label>
+      <race>BMT_RotHound</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+	
+	    <!-- Undead Architect -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_UndeadArchitect</defName>
+      <label>undead architect</label>
+      <description>A somewhat dim-witted reanimated builder. They're not as good as a living person, but they get simpler jobs done.</description>
+      <statBases>
+        <MoveSpeed>3.0</MoveSpeed>
+      </statBases>
+      <race>
+        <mechEnabledWorkTypes>
+          <li>Construction</li>
+        </mechEnabledWorkTypes>
+		<mechFixedSkillLevel>8</mechFixedSkillLevel>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_UndeadArchitect</defName>
+      <label>undead architect</label>
+      <race>BMT_UndeadArchitect</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
     </PawnKindDef>
 </Defs>
