@@ -17,6 +17,7 @@
         </mechEnabledWorkTypes>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
     </ThingDef>
     
@@ -54,10 +55,12 @@
 		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
 		<ArmorRating_Sharp>0.20</ArmorRating_Sharp>		
 		<ArmorRating_Heat>2.00</ArmorRating_Heat>
+		<Flammability>0.1</Flammability>
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
     </ThingDef>
     
@@ -99,6 +102,7 @@
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
     </ThingDef>
     
@@ -144,6 +148,7 @@
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
     </ThingDef>
     
@@ -231,6 +236,7 @@
         </deathAction>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
     </ThingDef>
     
@@ -263,7 +269,7 @@
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_RottingRanger</defName>
       <label>rotting ranger</label>
-      <description>An undead bowman that has a symbiotic relationship with plants</description>
+      <description>An undead bowman that has a symbiotic relationship with plants. It can hunt animals for its necromancer.</description>
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
       </statBases>
@@ -273,6 +279,7 @@
         </mechEnabledWorkTypes>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
     </ThingDef>
     
@@ -323,6 +330,7 @@
         </mechWorkTypePriorities>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
     </ThingDef>
     
@@ -358,10 +366,12 @@
       <description>A risen skeleton whose bones are fully encased in jagged metal. They are highly resistant to damage but move very slowly.</description>
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
+		<Flammability>0</Flammability>
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
 	  <tools>
 	  <li>
@@ -442,6 +452,7 @@
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
     </ThingDef>
     
@@ -482,8 +493,8 @@
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
-		<nuzzleMtbHours>12</nuzzleMtbHours>
 		<body>QuadrupedAnimalWithPawsAndTail</body>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
     <tools>
       <li>
@@ -576,6 +587,128 @@
       </lifeStages>
     </PawnKindDef>
 	
+	    <!-- Revolting Bear -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_RevoltingBear</defName>
+      <label>revolting bear</label>
+      <description>Reanimated as an undead, this bear no longer feeds on honey, berries, and meats, but instead hunts down whatever its creator wishes. Its thick blubber and lack of pain makes it a formidable fighter.</description>
+      <statBases>
+        <MoveSpeed>4.25</MoveSpeed>
+      </statBases>
+      <race>
+        <maxPreyBodySize>3</maxPreyBodySize>
+        <body>QuadrupedAnimalWithPaws</body>
+        <baseBodySize>2.15</baseBodySize>
+        <baseHealthScale>2.5</baseHealthScale>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_RevoltingBear</defName>
+      <label>revolting bear</label>
+      <race>BMT_RevoltingBear</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef> 
+	
+	
+	    <!-- Zombie Horse -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_ZombieHorse</defName>
+      <label>zombie horse</label>
+      <description>A simple zombified horse. It's not very useful for combat, but its lack of need for rest or food makes it perfect for caravans or riding. </description>
+      <statBases>
+        <MoveSpeed>4.25</MoveSpeed>
+      </statBases>
+      <race>
+        <body>QuadrupedAnimalWithHooves</body>
+        <baseBodySize>2.4</baseBodySize>
+        <baseHealthScale>1.75</baseHealthScale>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_ZombieHorse</defName>
+      <label>zombie horse</label>
+      <race>BMT_ZombieHorse</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+		    <!-- Skeletal Horse -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_SkeletalHorse</defName>
+      <label>skeletal horse</label>
+      <description>A simple skeletal horse. It's not very useful for combat, but its lack of need for rest or food makes it perfect for caravans or riding. </description>
+      <statBases>
+        <MoveSpeed>4.25</MoveSpeed>
+      </statBases>
+      <race>
+        <body>QuadrupedAnimalWithHooves</body>
+        <baseBodySize>2.4</baseBodySize>
+        <baseHealthScale>1.75</baseHealthScale>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_SkeletalHorse</defName>
+      <label>skeletal horse</label>
+      <race>BMT_SkeletalHorse</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
 	
 	    <!-- Undead Architect -->  
     <ThingDef ParentName="BMT_BaseUndead">
@@ -592,6 +725,7 @@
 		<mechFixedSkillLevel>8</mechFixedSkillLevel>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
       </race>
     </ThingDef>
     
@@ -610,6 +744,73 @@
         <li>
           <bodyGraphicData>
             <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+	<!-- Will-o-wisp -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_WilloWisp</defName>
+      <label>will-o-wisp</label>
+      <description>A small spectral orb that levitates a few feet off the ground. It cannot do much damage, but nor can it be easily harmed. It usually only appears at night.</description>
+      <statBases>
+        <MoveSpeed>4.25</MoveSpeed>
+		<ArmorRating_Blunt>0.90</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.90</ArmorRating_Sharp>		
+		<ArmorRating_Heat>2.00</ArmorRating_Heat>
+		<Flammability>0</Flammability>
+		<MaxFlightTime>50</MaxFlightTime>
+		<FlightCooldown>10</FlightCooldown>
+      </statBases>
+	  <tools>
+	  <li>
+		<label>Zap</label>
+		<capacities>
+          <li>Blunt</li>
+		</capacities>
+		<power>1</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Beam</def>
+			<amount>1</amount>
+			<chance>1</chance>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	</tools>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_WilloWisp</defName>
+      <label>will-o-wisp</label>
+      <race>BMT_WilloWisp</race>
+			<flyingAnimationFramePathPrefix>BMT_Prehistoric/Animals/Pteranodon/Pteranodon_Flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1</flyingAnimationDrawSize>
+			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
+			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>

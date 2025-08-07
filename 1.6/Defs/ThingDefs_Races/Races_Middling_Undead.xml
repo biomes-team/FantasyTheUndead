@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Ghoul -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_Ghoul</defName>
+      <label>ghoul</label>
+      <description>Despite their emaciated and decaying body, the ghoul remains a terrifying undead creature thanks to their razor-like claws and jagged teeth. Their nasty claws tend to cause infections in the wounds of living creatures, should they even survive a mauling.</description>
+      <statBases>
+        <MoveSpeed>4.35</MoveSpeed>
+      </statBases>
+	  	<tools>
+	  <li>
+		<label>Claws</label>
+		<capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+		</capacities>
+		<power>2</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Stun</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		  <li>
+			<def>BMT_NoxiousCut</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		  <li>
+			<def>BMT_NoxiousStab</def>
+			<amount>8</amount>
+			<chance>0.25</chance>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	  <li>
+		<label>Claws</label>
+		<capacities>
+          <li>Cut</li>
+          <li>Stab</li>
+		</capacities>
+		<power>2</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Stun</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		  <li>
+			<def>BMT_NoxiousCut</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		  <li>
+			<def>BMT_NoxiousStab</def>
+			<amount>8</amount>
+			<chance>0.25</chance>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	  <li>
+		<label>Teeth</label>
+		<capacities>
+          <li>Stab</li>
+		</capacities>
+		<power>7</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>Jaw</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Stun</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	</tools>
+	<mechWeightClass>Medium</mechWeightClass>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_Ghoul</defName>
+      <label>ghoul</label>
+      <race>BMT_Ghoul</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+	
+	<!-- Rimebone Archer -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_RimeboneArcher</defName>
+      <label>rimebone archer</label>
+      <description>Enchanted with the power of frost, the rimebone archer's arrows chill whatever they hit right down to the bone.</description>
+      <statBases>
+        <MoveSpeed>4.25</MoveSpeed>
+      </statBases>
+      <race>
+        <mechEnabledWorkTypes>
+          <li>Hunting</li>
+        </mechEnabledWorkTypes>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_RimeboneArcher</defName>
+      <label>rimebone archer</label>
+      <race>BMT_RimeboneArcher</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	  <weaponTags>
+        <li>BMT_RimeBow</li>
+      </weaponTags>
+    </PawnKindDef>
+	
+	
+	<!-- Tomb Toter -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_TombToter</defName>
+      <label>tomb toter</label>
+      <description>Despite their emaciated and decaying body, the ghoul remains a terrifying undead creature thanks to their razor-like claws and jagged teeth. Their nasty claws tend to cause infections in the wounds of living creatures, should they even survive a mauling.</description>
+      <statBases>
+        <MoveSpeed>4.35</MoveSpeed>
+      </statBases>
+	<mechWeightClass>Medium</mechWeightClass>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="BaseMechanoidKind">
+      <defName>BMT_TombToter</defName>
+      <label>tomb toter</label>
+      <race>BMT_TombToter</race>
+	  <startingHediffs>
+		<def>BMT_TombToting</def>
+	  </startingHediffs>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+	<!-- Spectral Skull -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_SpectralSkull</defName>
+      <label>spectral skull</label>
+      <description>A spectral skull. It is semi-incorporeal, making it difficult but not impossible to hit. It tends to be more of an annoyance in combat than anything else.</description>
+      <statBases>
+        <MoveSpeed>4</MoveSpeed>
+		<ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.50</ArmorRating_Sharp>		
+		<ArmorRating_Heat>2.00</ArmorRating_Heat>
+		<Flammability>0</Flammability>
+		<MaxFlightTime>50</MaxFlightTime>
+		<FlightCooldown>10</FlightCooldown>
+      </statBases>
+	  <tools>
+	  <li>
+		<label>Bonk</label>
+		<capacities>
+          <li>Blunt</li>
+		</capacities>
+		<power>5</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+
+	  </li>
+	</tools>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Medium</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="BaseMechanoidKind">
+      <defName>BMT_SpectralSkull</defName>
+      <label>spectral skull</label>
+      <race>BMT_SpectralSkull</race>
+			<flyingAnimationFramePathPrefix>BMT_Prehistoric/Animals/Pteranodon/Pteranodon_Flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1</flyingAnimationDrawSize>
+			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
+			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+	
+	<!-- Ghost -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_Ghost</defName>
+      <label>ghost</label>
+      <description>Like most spectral undead, ghosts straddle the divide between the here and the hereafter, never quite fully being in either one.</description>
+      <statBases>
+        <MoveSpeed>3</MoveSpeed>
+		<ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.75</ArmorRating_Sharp>		
+		<ArmorRating_Heat>2.00</ArmorRating_Heat>
+		<Flammability>0</Flammability>
+		<MaxFlightTime>50</MaxFlightTime>
+		<FlightCooldown>5</FlightCooldown>
+      </statBases>
+	  	<tools>
+	  <li>
+		<label>spectral hand</label>
+		<capacities>
+          <li>Scratch</li>
+		</capacities>
+		<power>10</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Frostbite</def>
+			<amount>2</amount>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	  <li>
+		<label>spectral hand</label>
+		<capacities>
+          <li>Scratch</li>
+		</capacities>
+		<power>10</power>
+		<cooldownTime>2</cooldownTime>
+		<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Frostbite</def>
+			<amount>2</amount>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+
+	</tools>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Medium</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="BaseMechanoidKind">
+      <defName>BMT_SpectralSkull</defName>
+      <label>spectral skull</label>
+      <race>BMT_SpectralSkull</race>
+			<flyingAnimationFramePathPrefix>BMT_Prehistoric/Animals/Pteranodon/Pteranodon_Flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1</flyingAnimationDrawSize>
+			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
+			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+</Defs>

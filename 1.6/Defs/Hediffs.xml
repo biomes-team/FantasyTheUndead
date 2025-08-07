@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef ParentName="BurnBase">
+    <defName>BMT_ArcaneHarm</defName>
+    <label>arcane harm</label>
+    <labelNoun>An arcane wound</labelNoun>
+    <description>A burn-like wound caused by an arcane source.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>salved</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.05</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>mangled arcane scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <destroyedLabel>Burned off by magic</destroyedLabel>
+      <destroyedOutLabel>Burned out by magic</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  
+<!-- Noxious Wound Hediffs -->
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>BMT_NoxiousCut</defName>
+    <label>noxious cut</label>
+    <labelNoun>a noxious cut</labelNoun>
+    <description>A noxious cut with a greater infection chance.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.50</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>cut scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <bleedRate>0.06</bleedRate>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Cut off</destroyedLabel>
+      <destroyedOutLabel>Cut out</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>BMT_NoxiousStab</defName>
+    <label>noxious stab</label>
+    <labelNoun>a noxious stab wound</labelNoun>
+    <description>A noxious stab wound with a greater infection chance.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.50</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>stab scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <bleedRate>0.06</bleedRate>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Cut off</destroyedLabel>
+      <destroyedOutLabel>Cut out</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>BMT_NoxiousScratch</defName>
+    <label>noxious scratch</label>
+    <labelNoun>a noxious scratch</labelNoun>
+    <description>A noxious scratch or tear with a greater infection chance.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.50</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>scratch scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <bleedRate>0.06</bleedRate>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Torn off</destroyedLabel>
+      <destroyedOutLabel>Torn out</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+
+<!-- Ragged Wounds -->
+  <HediffDef ParentName="InjuryBase">
+    <defName>BMT_RaggedCut</defName>
+    <label>ragged cut</label>
+    <labelNoun>a ragged cut</labelNoun>
+    <description>A ragged cut with a higher bleeding rate.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.10</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>cut scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <bleedRate>0.10</bleedRate>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Cut off</destroyedLabel>
+      <destroyedOutLabel>Cut out</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>BMT_RaggedStab</defName>
+    <label>ragged stab</label>
+    <labelNoun>a ragged stab wound</labelNoun>
+    <description>A ragged stab wound with a higher bleeding rate.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.10</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>stab scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <bleedRate>0.1</bleedRate>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Cut off</destroyedLabel>
+      <destroyedOutLabel>Cut out</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>BMT_RaggedScratch</defName>
+    <label>ragged scratch</label>
+    <labelNoun>a ragged scratch</labelNoun>
+    <description>A ragged scratch or tear with a higher bleeding rate.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.10</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>scratch scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <bleedRate>0.1</bleedRate>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Torn off</destroyedLabel>
+      <destroyedOutLabel>Torn out</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+
+<!-- Withering Curse -->
+  <HediffDef ParentName="InfectionBase">
+    <defName>BMT_WitheringCurse</defName>
+    <label>withering curse</label>
+    <labelNoun>a withering curse</labelNoun>
+    <description>A vile curse from a powerful undead. Without treatment, the curse will slowly wither the afflicted body part until it is destroyed. 
+\nA skilled physician can treat it and likely save the afflicted body part, but an unskilled one will be forced to remove the afflicted body part.
+\nIn exceedingly rare situations, the afflicted manage to survive without aid.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.01</initialSeverity>
+	<isInfection>true</isInfection>
+    <tendable>true</tendable>
+	<canAffectBionicOrImplant>true</canAffectBionicOrImplant>
+    <onlyLifeThreateningTo>
+      <li>Heart</li>
+	  <li>Liver</li>
+    </onlyLifeThreateningTo>
+    <removeOnQuestLodgers>true</removeOnQuestLodgers>
+    <stages>
+      <li>
+        <label>minor</label>
+        <partEfficiencyOffset>-0.1</partEfficiencyOffset>
+        <painOffset>0.1</painOffset>
+      </li>
+      <li>
+        <minSeverity>0.15</minSeverity>
+        <label>minor</label>
+        <partEfficiencyOffset>-0.25</partEfficiencyOffset>
+        <painOffset>0.2</painOffset>
+      </li>
+      <li>
+        <minSeverity>0.4</minSeverity>
+        <label>major</label>
+        <partEfficiencyOffset>-0.5</partEfficiencyOffset>
+        <painOffset>0.35</painOffset>
+      </li>
+      <li>
+        <minSeverity>0.6</minSeverity>
+        <label>major</label>
+        <partEfficiencyOffset>-0.75</partEfficiencyOffset>
+      </li>
+      <li>
+        <minSeverity>0.8</minSeverity>
+        <label>extreme</label>
+        <partEfficiencyOffset>-0.9</partEfficiencyOffset>
+      </li>
+      <li>
+        <minSeverity>0.90</minSeverity>
+        <lifeThreatening>true</lifeThreatening>
+        <label>extreme</label>
+        <partEfficiencyOffset>-1.0</partEfficiencyOffset>
+        <painOffset>0.8</painOffset>
+        <destroyPart>true</destroyPart>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <baseTendDurationHours>12</baseTendDurationHours>
+        <severityPerDayTended>-0.01</severityPerDayTended>
+      </li>
+      <li Class="HediffCompProperties_DestroyOrgan">
+        <messageText>{PAWN_labelShort}'s {1} was destroyed by the withering curse.</messageText>
+        <damageType>Withered</damageType>
+	  </li>
+    </comps>
+  </HediffDef>
+
+  
+  <!-- Withering Curse Thought Def -->
+  
+   <ThoughtDef>
+    <defName>BMT_WitheringCurse</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>BMT_WitheringCurse</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+	<nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>withering curse</label>
+        <description>A part of my body slowly withers. I feel it growing ever weaker.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  
+  <!-- Life Drain Curse -->
+  
+    <HediffDef ParentName="InfectionBase">
+    <defName>BMT_LifeDrainCurse</defName>
+    <label>life drain curse</label>
+    <labelNoun>a life drain curse</labelNoun>
+    <description>An especially wicked curse from a powerful undead. Without treatment, the curse will slowly drain the life from the afflicted pawn until they die.
+\nA skilled physician can treat it and likely save the afflicted pawn. Without a skilled physician, however, it is a death sentence.
+\nIn exceedingly rare situations, the afflicted manage to survive without aid.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.01</initialSeverity>
+    <chanceToCauseNoPain>0.3</chanceToCauseNoPain>
+    <tendable>true</tendable>
+    <removeOnQuestLodgers>true</removeOnQuestLodgers>
+    <stages>
+      <li>
+        <label>minor</label>
+        <painOffset>0.1</painOffset>
+		<capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.1</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.1</offset>
+          </li>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.15</minSeverity>
+        <label>minor</label>
+        <painOffset>0.2</painOffset>
+		<capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.9</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.2</offset>
+          </li>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.4</minSeverity>
+        <label>major</label>
+        <painOffset>0.35</painOffset>
+		<capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.75</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.2</offset>
+          </li>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.6</minSeverity>
+        <label>major</label>
+        <painOffset>0.5</painOffset>
+		<capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.4</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.5</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.4</offset>
+          </li>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>-0.30</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.8</minSeverity>
+        <label>extreme</label>
+        <painOffset>0.6</painOffset>
+		<capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.6</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.25</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.6</offset>
+          </li>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>-0.50</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.90</minSeverity>
+        <lifeThreatening>true</lifeThreatening>
+        <label>extreme</label>
+        <painOffset>0.8</painOffset>
+		<capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.75</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.10</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.8</offset>
+          </li>
+		  <li>
+            <capacity>Moving</capacity>
+            <offset>-0.70</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <baseTendDurationHours>12</baseTendDurationHours>
+        <severityPerDayTended>-0.01</severityPerDayTended>
+      </li>
+      <li Class="HediffCompProperties_GrowthMode">
+        <severityPerDayGrowing>0.02</severityPerDayGrowing>
+        <severityPerDayRemission>-0.002</severityPerDayRemission>
+        <severityPerDayGrowingRandomFactor>0.45~1.65</severityPerDayGrowingRandomFactor>
+        <severityPerDayRemissionRandomFactor>0.5~1.0</severityPerDayRemissionRandomFactor>
+      </li>
+    </comps>
+  </HediffDef>
+  
+    <RecipeDef ParentName="SurgeryFlesh">
+    <defName>BMT_RemoveLifeDrainCurse</defName>
+    <label>remove life drain curse</label>
+    <description>Remove the curse that is slowly draining the life force of the afflicted. There is a tiny chance of the curse causing immediate death if removal fails.</description>
+    <workerClass>Recipe_RemoveHediff</workerClass>
+    <jobString>Removing curse.</jobString>
+    <workAmount>5000</workAmount>
+    <removesHediff>BMT_LifeDrainCurse</removesHediff>
+    <successfullyRemovedHediffMessage>{0} has successfully removed {1}'s life drain curse.</successfullyRemovedHediffMessage>
+    <deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+    <targetsBodyPart>false</targetsBodyPart>
+    <recipeUsers>
+      <li>Human</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">CreepJoiner</li>
+    </recipeUsers>
+    <skillRequirements>
+      <Medicine>12</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+    <!-- Thought Def -->
+  
+   <ThoughtDef>
+    <defName>BMT_LifeDrainCurse</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>BMT_LifeDrainCurse</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+	<nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>life drain curse</label>
+        <description>My life force fades. Every moment brings me closer to death, I can feel it.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Tomb Toting -->
+    <HediffDef ParentName="InfectionBase">
+    <defName>BMT_TombToting</defName>
+    <label>tomb toting</label>
+    <labelNoun>an ability to spawn multiple smaller undead on death</labelNoun>
+    <description>An infection of parasitic larvae from the megaphorid. Without treatment, the larvae will grow over time, slowly devouring the infected, causing worsening symptoms and eventually killing the patient.
+\nA skilled doctor can excise the larvae. An unskilled doctor may be able to simply amputate the body part which contains the growing larvae. Unless it's the head or torso, in which case, good luck.
+\nOn exceptionally rare occasion, the body's immune system will manage to fight off the larvae by itself.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1.0</initialSeverity>
+	<maxSeverity>1</maxSeverity>
+	<everCurableByItem>false</everCurableByItem>
+    <tendable>false</tendable>
+	<stages>
+      <li>
+        <label>general</label>
+		<becomeVisible>false</becomeVisible>
+      </li>
+	</stages>  
+	<comps>
+	  <li Class="BiomesCore.HediffCompProperties_CorpseSpawner">
+        <pawn>BMT_UndeadPeasant</pawn> <!-- must be set to a pawnkinddef --> <!-- Change this to crawling hands or whatever we go with eventually -->
+		<pawnCountRange>3~6</pawnCountRange> <!-- default 1 -->
+		<bloodCountRange>3~6</bloodCountRange> <!-- default 3~6 -->
+		<bloodRadius>2</bloodRadius> <!-- default 2 -->
+		<forceParentFaction>true</forceParentFaction> <!-- default false -->
+		<bloodDef>Filth_Blood</bloodDef> <!-- default Filth_Blood -->
+      </li>
+    </comps>
+  </HediffDef>
+
+</Defs>

@@ -87,7 +87,7 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Arrow_Short</defaultProjectile>
+        <defaultProjectile>Arrow_Great</defaultProjectile>
         <warmupTime>1.25</warmupTime>
         <range>39.9</range>
         <soundCast>Bow_Small</soundCast>
@@ -95,18 +95,53 @@
     </verbs>
   </ThingDef>
   
-  <ThingDef Name="BaseProjectileNeolithic" Abstract="True">
-    <category>Projectile</category>
-    <tickerType>Normal</tickerType>
-    <altitudeLayer>Projectile</altitudeLayer>
-    <thingClass>Bullet</thingClass>
-    <label>arrow</label>
-    <useHitPoints>False</useHitPoints>
-    <neverMultiSelect>True</neverMultiSelect>
+   <ThingDef ParentName="LightUndeadRangedWeapon">
+    <defName>BMT_RimeBow</defName>
+    <label>rime bow</label>
+    <description>An old longbow worn by the weather and chill. It is enchanted with icy damage.</description>
+    <possessionCount>1</possessionCount>
     <graphicData>
-      <shaderType>Transparent</shaderType>
+      <texPath>Things/Item/Equipment/WeaponRanged/BowShort</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+    <soundInteract>Bow_Small</soundInteract>
+    <statBases>
+      <Mass>1.5</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.75</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>BMT_RimeBow</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Arrow_Recurve</defaultProjectile>
+        <warmupTime>1.25</warmupTime>
+        <range>39.9</range>
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
   </ThingDef>
+  
+    <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>BMT_RimeArrow</defName>
+    <label>rime bow arrow</label>
+    <graphicData>
+      <texPath>Things/Projectile/Arrow_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>BMT_RimeArrow</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>56</speed>
+    </projectile>
+ 
   
     <ThingDef ParentName="LightUndeadRangedWeapon">
     <defName>BMT_InitiateStaff</defName>
