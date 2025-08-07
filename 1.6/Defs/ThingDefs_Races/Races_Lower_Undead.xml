@@ -1,6 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
+    <!-- Zombie -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_Zombie</defName>
+      <label>zombie</label>
+      <description>A basic zombie. Due to its undead state it doesn't feel pain, nor does it bleed.</description>
+      <statBases>
+        <MoveSpeed>4.25</MoveSpeed>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_Zombie</defName>
+      <label>zombie</label>
+      <race>BMT_Zombie</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Zombie/Zombie</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Zombie/Zombie</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+	
+	<!-- Skeleton -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_Skeleton</defName>
+      <label>skeleton</label>
+      <description>A basic skeleton. Due to its undead state it doesn't feel pain, nor does it bleed. It is immune to fire and considerable heat thanks to being just bones.</description>
+      <statBases>
+        <MoveSpeed>4.25</MoveSpeed>
+		<Flammability>0</Flammability>
+		<ArmorRating_Heat>1.5</ArmorRating_Heat>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_Skeleton</defName>
+      <label>skeleton</label>
+      <race>BMT_Skeleton</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Skeleton/Skeleton</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Skeleton/Skeleton</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+	
     <!-- Peasant -->  
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_UndeadPeasant</defName>
@@ -48,13 +125,13 @@
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_BoneArbalister</defName>
       <label>bone arbalister</label>
-      <description>A lightly armored zombie armed with an arbalest. It is best suited to medium range fighting.</description>
+      <description>A lightly armored skeleton armed with an arbalest. It is best suited to medium range fighting.</description>
       <statBases>
         <MoveSpeed>4.0</MoveSpeed>
 		<Flammability>0.10</Flammability>
 		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
 		<ArmorRating_Sharp>0.20</ArmorRating_Sharp>		
-		<ArmorRating_Heat>2.00</ArmorRating_Heat>
+		<ArmorRating_Heat>1.8</ArmorRating_Heat>
 		<Flammability>0.1</Flammability>
       </statBases>
       <race>
@@ -71,14 +148,14 @@
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Arbalister/Arbalister</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Arbalister/Arbalister</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
@@ -143,7 +220,9 @@
       <statBases>
         <MoveSpeed>4.0</MoveSpeed>
 		<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
-		<ArmorRating_Sharp>0.25</ArmorRating_Sharp>	
+		<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+		<Flammability>0</Flammability>
+		<ArmorRating_Heat>1.5</ArmorRating_Heat>
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -159,14 +238,14 @@
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
@@ -272,6 +351,8 @@
       <description>An undead bowman that has a symbiotic relationship with plants. It can hunt animals for its necromancer.</description>
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
+		<Flammability>0.1</Flammability>
+		<ArmorRating_Heat>1</ArmorRating_Heat>
       </statBases>
       <race>
         <mechEnabledWorkTypes>
@@ -367,6 +448,7 @@
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
 		<Flammability>0</Flammability>
+		<ArmorRating_Heat>2.0</ArmorRating_Heat>
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -425,14 +507,14 @@
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/IronBones/IronBones</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/IronBones/IronBones</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
@@ -445,15 +527,31 @@
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_UndyingInitiate</defName>
       <label>undying initiate</label>
-      <description>A slightly more intelligent zombie capable of doing simple magical attacks.</description>
+      <description>A slightly more intelligent skeleton capable of doing simple magical attacks. It has a low-durability arcane shield around it.</description>
       <statBases>
         <MoveSpeed>4.0</MoveSpeed>
+		<Flammability>0</Flammability>
+		<ArmorRating_Heat>2</ArmorRating_Heat>
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Light</mechWeightClass>
       </race>
+    <comps>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>3</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <color>(0.4, 0.4, 0.4)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>100</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+        <chargeDurationTicks>5400</chargeDurationTicks><!-- 90s -->
+        <drawWithNoSelection>True</drawWithNoSelection>
+        <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+    </comps>
     </ThingDef>
     
     <PawnKindDef ParentName="NonCombatLightMechanoidKind">
@@ -463,14 +561,14 @@
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingInitiate/UndyingInitiate</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingInitiate/UndyingInitiate</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
@@ -710,7 +808,7 @@
     </PawnKindDef>
 	
 	
-	    <!-- Undead Architect -->  
+	<!-- Undead Architect -->  
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_UndeadArchitect</defName>
       <label>undead architect</label>
@@ -794,7 +892,7 @@
       <defName>BMT_WilloWisp</defName>
       <label>will-o-wisp</label>
       <race>BMT_WilloWisp</race>
-			<flyingAnimationFramePathPrefix>BMT_Prehistoric/Animals/Pteranodon/Pteranodon_Flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFramePathPrefix>BMT_FantasyTheUndead/Things/Creatures/Wisp/Wisp_Flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
 			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
 			<flyingAnimationDrawSize>1</flyingAnimationDrawSize>
@@ -803,18 +901,19 @@
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Wisp/Wisp</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Wisp/Wisp</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
     </PawnKindDef>
+	
 </Defs>

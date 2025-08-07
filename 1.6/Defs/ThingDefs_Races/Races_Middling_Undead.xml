@@ -88,7 +88,7 @@
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_Ghoul</defName>
       <label>ghoul</label>
       <race>BMT_Ghoul</race>
@@ -120,30 +120,27 @@
         <MoveSpeed>4.25</MoveSpeed>
       </statBases>
       <race>
-        <mechEnabledWorkTypes>
-          <li>Hunting</li>
-        </mechEnabledWorkTypes>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
-		<mechWeightClass>Light</mechWeightClass>
+		<mechWeightClass>Medium</mechWeightClass>
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_RimeboneArcher</defName>
       <label>rimebone archer</label>
       <race>BMT_RimeboneArcher</race>
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/RimeBones/RimeBones</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/RimeBones/RimeBones</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
@@ -232,7 +229,7 @@
       <defName>BMT_SpectralSkull</defName>
       <label>spectral skull</label>
       <race>BMT_SpectralSkull</race>
-			<flyingAnimationFramePathPrefix>BMT_Prehistoric/Animals/Pteranodon/Pteranodon_Flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFramePathPrefix>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull_Flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
 			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
 			<flyingAnimationDrawSize>1</flyingAnimationDrawSize>
@@ -241,14 +238,14 @@
       <lifeStages>
         <li>
           <bodyGraphicData>
-            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
-            <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>1.1</drawSize>
           </bodyGraphicData>
@@ -315,12 +312,247 @@
       <defName>BMT_SpectralSkull</defName>
       <label>spectral skull</label>
       <race>BMT_SpectralSkull</race>
-			<flyingAnimationFramePathPrefix>BMT_Prehistoric/Animals/Pteranodon/Pteranodon_Flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFramePathPrefix>BMT_FantasyTheUndead/Things/Creatures/Ghost/Ghost_Flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
 			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
 			<flyingAnimationDrawSize>1</flyingAnimationDrawSize>
 			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
 			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Ghost/Ghost</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Ghost/Ghost</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+	
+	<!-- Undying Disciple -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_UndyingDisciple</defName>
+      <label>undying disciple</label>
+      <description>A more intelligent skeleton capable of doing skilled magical attacks. It has a medium-durability arcane shield around it.</description>
+      <statBases>
+        <MoveSpeed>4</MoveSpeed>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Medium</mechWeightClass>
+      </race>
+    <comps>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>4</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <color>(0.4, 0.4, 0.4)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>200</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+        <chargeDurationTicks>5400</chargeDurationTicks><!-- 90s -->
+        <drawWithNoSelection>True</drawWithNoSelection>
+        <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+    </comps>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_UndyingDisciple</defName>
+      <label>undying disciple</label>
+      <race>BMT_UndyingDisciple</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingDisciple/UndyingDisciple</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingDisciple/UndyingDisciple</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	  <weaponTags>
+        <li>BMT_DiscipleStaff</li>
+      </weaponTags>
+    </PawnKindDef>
+	
+	
+		<!-- Decaying Drummer -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_DecayingDrummer</defName>
+      <label>decaying drummer</label>
+      <description>Drumming even after death, their beats inspire nearby undead to move faster and hit more often.</description>
+      <statBases>
+        <MoveSpeed>4.1</MoveSpeed>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Medium</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_DecayingDrummer</defName>
+      <label>decaying drummer</label>
+      <race>BMT_DecayingDrummer</race>
+	  <startingHediffs>
+		<def>BMT_DrumBeatOfTheDead</def>
+	  </startingHediffs>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/DecayingDrummer/DecayingDrummer</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/DecayingDrummer/DecayingDrummer</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	  <weaponTags>
+        <li>BMT_DecayingDrum</li>
+      </weaponTags>
+    </PawnKindDef>
+	
+	
+			<!-- Bishop of Rot and Ruin -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_BishopOfRotAndRuin</defName>
+      <label>bishop of rot and ruin</label>
+      <description>Bishops of rot and ruin are central to any undead army. Their censers spread toxic gas and their chanting speeds up healing to nearby allies.</description>
+      <statBases>
+        <MoveSpeed>4.1</MoveSpeed>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Medium</mechWeightClass>
+      </race>
+	  	<comps>
+
+			<li Class="BiomesCore.ThingComponents.CompProperties_SpawnGasOnTakeDamage">
+				<gasType>ToxGas</gasType>
+				<chance>1.0</chance>
+				<amount>55</amount>
+			</li>
+		</comps>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_BishopOfRotAndRuin</defName>
+      <label>bishop of rot and ruin</label>
+      <race>BMT_BishopOfRotAndRuin</race>
+	  <startingHediffs>
+		<def>BMT_HealTheDead</def>
+	  </startingHediffs>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	  <weaponTags>
+        <li>BMT_BishopCenser</li>
+      </weaponTags>
+    </PawnKindDef>
+	
+	
+	    <!-- Colossus -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_Colossus</defName>
+      <label>colossus</label>
+      <description>Hulking monstrosities of undead flesh, the colossus is an unliving tank and siege engine. It moves at a very slow pace but is capable of crushing both enemies and structures with ease.</description>
+      <statBases>
+        <MoveSpeed>2</MoveSpeed>
+      </statBases>
+	  <baseHealthScale>3</baseHealthScale>
+	  <baseBodySize>2</baseBodySize>
+	  <tools>
+	  <li>
+		<label>Fist</label>
+		<capacities>
+          <li>Crush</li>
+		</capacities>
+		<power>20</power>
+		<cooldownTime>4</cooldownTime>
+		<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Stun</def>
+			<amount>10</amount>
+			<chance>0.5</chance>
+		  </li>
+		  <li>
+			<def>Thump</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	  <li>
+		<label>Fist</label>
+		<capacities>
+          <li>Crush</li>
+		</capacities>
+		<power>20</power>
+		<cooldownTime>4</cooldownTime>
+		<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Stun</def>
+			<amount>10</amount>
+			<chance>0.5</chance>
+		  </li>
+		  <li>
+			<def>Thump</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	</tools>
+	<mechWeightClass>Medium</mechWeightClass>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="BaseMechanoidKind">
+      <defName>BMT_Colossus</defName>
+      <label>colossus</label>
+      <race>BMT_Colossus</race>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -337,5 +569,50 @@
           </bodyGraphicData>
         </li>
       </lifeStages>
+    </PawnKindDef>
+	
+	
+		<!-- Undead Miner -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_UndeadMiner</defName>
+      <label>undead miner</label>
+      <description></description>
+      <statBases>
+        <MoveSpeed>3.0</MoveSpeed>
+      </statBases>
+      <race>
+        <mechEnabledWorkTypes>
+          <li>Mining</li>
+        </mechEnabledWorkTypes>
+		<mechFixedSkillLevel>10</mechFixedSkillLevel>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_UndeadMiner</defName>
+      <label>undead miner</label>
+      <race>BMT_UndeadMiner</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Miner/Miner</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Miner/Miner</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	   <weaponTags>
+        <li>BMT_RustedPickaxe</li>
+      </weaponTags>
     </PawnKindDef>
 </Defs>

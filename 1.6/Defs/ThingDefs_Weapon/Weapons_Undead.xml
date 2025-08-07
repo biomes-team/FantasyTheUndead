@@ -35,7 +35,7 @@
     <description>An old and rusted arbalest used by undead arbalisters.</description>
     <possessionCount>1</possessionCount>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/BowShort</texPath>
+      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadArbalest/UndeadArbalest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
@@ -68,7 +68,7 @@
     <description>An old and worn longbow that smells of decay. It is used by rotting rangers.</description>
     <possessionCount>1</possessionCount>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/BowShort</texPath>
+      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadBow/UndeadBow</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
@@ -101,7 +101,7 @@
     <description>An old longbow worn by the weather and chill. It is enchanted with icy damage.</description>
     <possessionCount>1</possessionCount>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/BowShort</texPath>
+      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadRimebow/UndeadRimebow</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
@@ -149,7 +149,7 @@
     <description>An arcane staff used by undying initiates.</description>
     <possessionCount>1</possessionCount>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/BowShort</texPath>
+      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadStaffInitiate/UndeadStaffInitiate</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
@@ -166,14 +166,250 @@
     </weaponTags>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>Verb_ShootBeam</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Arrow_Short</defaultProjectile>
-        <warmupTime>1.55</warmupTime>
-        <range>29.9</range>
-        <soundCast>Bow_Small</soundCast>
+        <warmupTime>1.0</warmupTime>
+        <range>7.9</range>
+        <minRange>2</minRange>
+        <beamFullWidthRange>6.9</beamFullWidthRange>
+        <burstShotCount>1</burstShotCount>
+        <showBurstShotStats>false</showBurstShotStats>
+        <beamWidth>6</beamWidth>
+        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+        <beamDamageDef>BMT_ArcaneHarm</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamCurvature>0.6</beamCurvature>
+        <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
+        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.85</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        <beamStartOffset>0.8</beamStartOffset>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
       </li>
     </verbs>
+  </ThingDef>
+  
+    <ThingDef ParentName="LightUndeadRangedWeapon">
+    <defName>BMT_DiscipleStaff</defName>
+    <label>disciple staff</label>
+    <description>An arcane staff used by undying disciples.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadStaffDisciple/UndeadStaffDisciple</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Small</soundInteract>
+    <statBases>
+      <Mass>1.5</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>BMT_DiscipleStaff</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootBeam</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>1.0</warmupTime>
+        <range>10.9</range>
+        <minRange>1</minRange>
+        <beamFullWidthRange>6.9</beamFullWidthRange>
+        <burstShotCount>2</burstShotCount>
+        <showBurstShotStats>false</showBurstShotStats>
+        <beamWidth>6</beamWidth>
+        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+        <beamDamageDef>BMT_ArcaneHarm</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamCurvature>0.6</beamCurvature>
+        <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
+        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.85</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        <beamStartOffset>0.8</beamStartOffset>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+      <ThingDef ParentName="LightUndeadRangedWeapon">
+    <defName>BMT_AdeptStaff</defName>
+    <label>adept staff</label>
+    <description>An arcane staff used by undying adepts.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadStaffAdept/UndeadStaffAdept</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Small</soundInteract>
+    <statBases>
+      <Mass>1.5</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>BMT_DiscipleStaff</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootBeam</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>1.0</warmupTime>
+        <range>15.9</range>
+        <minRange>1</minRange>
+        <beamFullWidthRange>6.9</beamFullWidthRange>
+        <burstShotCount>3</burstShotCount>
+        <showBurstShotStats>false</showBurstShotStats>
+        <beamWidth>6</beamWidth>
+        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+        <beamDamageDef>BMT_ArcaneHarm</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamCurvature>0.6</beamCurvature>
+        <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
+        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.85</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        <beamStartOffset>0.8</beamStartOffset>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>BMT_BishopCenser</defName>
+    <label>bishop of rot and ruin censer</label>
+    <description>An ornate censer used to spread toxic smoke. Useful against the living, less so against the undead.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/SmokeLauncher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <generateCommonality>0.3</generateCommonality>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>3.4</Mass>
+      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <weaponTags Inherit="False">
+      <li>BMT_BishopCenser</li>
+    </weaponTags>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <displayPriority>465</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_ToxbombLauncher</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <range>7.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>BMT_CenserLob</defName>
+    <label>condensed toxic smoke</label>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(140,135,156)</color>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>20</speed>
+      <damageDef>ToxGas</damageDef>
+      <explosionRadius>4.9</explosionRadius>
+      <explosionRadiusDisplayPadding>5</explosionRadiusDisplayPadding>
+      <postExplosionGasType>ToxGas</postExplosionGasType>
+      <ai_IsIncendiary>false</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+      <screenShakeFactor>0.5</screenShakeFactor>
+    </projectile>
   </ThingDef>
 
 <!-- Melee -->
@@ -212,7 +448,7 @@
     </tools>
     <equippedAngleOffset>-65</equippedAngleOffset>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponMelee/Axe</texPath>
+      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadAxe/UndeadAxe</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
@@ -222,7 +458,7 @@
     <label>rusted longsword</label>
     <description>An old and rusted longsword. It is wielded by undead soldiers.</description>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponMelee/LongSword</texPath>
+      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadLongsword/UndeadLongsword</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <weaponTags>
@@ -302,4 +538,85 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
+  
+ 
+   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>BMT_RustedPickaxe</defName>
+    <label>rusted pickaxe</label>
+    <description>A worn and rusty pickaxe wielded by a specific type of zombie.</description>
+    <techLevel>Medieval</techLevel>
+    <statBases>
+      <WorkToMake>7000</WorkToMake>
+      <Mass>1.5</Mass>
+    </statBases>
+    <weaponTags>
+      <li>BMT_RustedPickaxe</li>
+    </weaponTags>
+    <recipeMaker IsNull="True"/>
+    <smeltable>False</smeltable>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <graphicData>
+      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadPickaxe/UndeadPickaxe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  
+    <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>BMT_DecayingDrum</defName>
+    <label>decaying drum</label>
+    <description>A weathered and beaten drum used by the decaying drummer skeleton.</description>
+    <techLevel>Medieval</techLevel>
+    <statBases>
+      <WorkToMake>7000</WorkToMake>
+      <Mass>1.5</Mass>
+    </statBases>
+    <weaponTags>
+      <li>BMT_DecayingDrum</li>
+    </weaponTags>
+    <recipeMaker IsNull="True"/>
+    <smeltable>False</smeltable>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <equippedAngleOffset>0</equippedAngleOffset>
+    <graphicData>
+      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadDrum/UndeadDrum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  
+
 </Defs>
