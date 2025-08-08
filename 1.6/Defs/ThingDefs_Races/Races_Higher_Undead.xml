@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- Wraith -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_Wraith</defName>
+      <label>wraith</label>
+      <description>Encountered most often in dark places like crypts, tombs, and abandoned cemeteries, the wraith rarely faces its enemies head on, instead summoning swarms of shadows to do their bidding. Their largely incorporeal form makes them very hard to kill, but sunlight weakens them.</description>
+      <statBases>
+        <MoveSpeed>2.5</MoveSpeed>
+		<ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.75</ArmorRating_Sharp>		
+		<ArmorRating_Heat>2.00</ArmorRating_Heat>
+		<Flammability>0</Flammability>
+		<MaxFlightTime>50</MaxFlightTime>
+		<FlightCooldown>5</FlightCooldown>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Heavy</mechWeightClass>
+      </race>
+    <comps>
+      <li Class="CompProperties_MechCarrier">
+        <spawnPawnKind>BMT_Shadow</spawnPawnKind>
+        <fixedIngredient>BMT_Ectoplasm</fixedIngredient>
+        <costPerPawn>10</costPerPawn>
+        <startingIngredientCount>600</startingIngredientCount>
+        <maxIngredientCount>600</maxIngredientCount>
+        <spawnEffecter>WarqueenWarUrchinsSpawned</spawnEffecter>
+        <spawnedMechEffecter>WarUrchinSpawned</spawnedMechEffecter>
+        <attachSpawnedEffecter>true</attachSpawnedEffecter>
+        <attachSpawnedMechEffecter>true</attachSpawnedMechEffecter>
+      </li>
+    </comps>	  
+    </ThingDef>
+    
+    <PawnKindDef ParentName="BaseMechanoidKind">
+      <defName>BMT_Wraith</defName>
+      <label>wraith</label>
+      <race>BMT_Wraith</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Wraith/Wraith</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Wraith/Wraith</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+	
+    <!-- Shadow -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_Shadow</defName>
+      <label>shadow</label>
+      <description>Rarely if ever not seen alongside wraiths, shadows are formed by their masters from scraps of death energy left behind when a creature dies. They move quickly through the darkness towards their target. When they die, they leave behind bits of ectoplasm.</description>
+      <statBases>
+        <MoveSpeed>6</MoveSpeed>
+		<ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.75</ArmorRating_Sharp>		
+		<ArmorRating_Heat>2.00</ArmorRating_Heat>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Light</mechWeightClass>
+		<hasCorpse>false</hasCorpse>	
+        <detritusLeavings>
+          <li>
+            <def>BMT_Ectoplasm</def>
+            <spawnChance>1</spawnChance>
+          </li>
+        </detritusLeavings>		
+      </race>	  
+    </ThingDef>
+    
+    <PawnKindDef ParentName="BaseMechanoidKind">
+      <defName>BMT_Shadow</defName>
+      <label>shadow</label>
+      <race>BMT_Shadow</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Shadow/Shadow</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/Shadow/Shadow</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>	
+	
+	<!-- Undying Adept -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_UndyingAdept</defName>
+      <label>undying adept</label>
+      <description>A more intelligent skeleton capable of doing powerful magical attacks. It has a high-durability arcane shield around it.</description>
+      <statBases>
+        <MoveSpeed>4</MoveSpeed>
+		<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.30</ArmorRating_Sharp>	
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Medium</mechWeightClass>
+      </race>
+    <comps>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>5</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <color>(0.4, 0.4, 0.4)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>300</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+        <chargeDurationTicks>5400</chargeDurationTicks><!-- 90s -->
+        <drawWithNoSelection>True</drawWithNoSelection>
+        <gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
+      </li>
+    </comps>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_UndyingAdept</defName>
+      <label>undying adept</label>
+      <race>BMT_UndyingAdept</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingAdept/UndyingAdept</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingAdept/UndyingAdept</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	  <weaponTags>
+        <li>BMT_AdeptStaff</li>
+      </weaponTags>
+    </PawnKindDef>
+	
+	<!-- Champion of Decay -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_ChampionOfDecay</defName>
+      <label>champion of decay</label>
+      <description>One of the most powerful undead one can create, the champion is a fearsome risen knight with attacks capable of inflicting debilitating damage alongside life-leeching and necrotizing curses. Their blade cleaves through all but the most powerful armor.</description>
+      <statBases>
+        <MoveSpeed>4.0</MoveSpeed>
+		<ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+		<Flammability>0</Flammability>
+		<ArmorRating_Heat>1.5</ArmorRating_Heat>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Heavy</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_ChampionOfDecay</defName>
+      <label>champion of decay</label>
+      <race>BMT_ChampionOfDecay</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	   <weaponTags>
+        <li>BMT_UndeadChampionBlade</li>
+      </weaponTags>
+    </PawnKindDef>
+
+	<!-- Eternal General -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_EternalGeneral</defName>
+      <label>eternal general</label>
+      <description>Acting as a commander for undead armies for their necromancer masters, the eternal general grants a commanding aura to nearby undead, increasing their attack speed and hit rate.</description>
+      <statBases>
+        <MoveSpeed>4.0</MoveSpeed>
+		<ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+		<Flammability>0</Flammability>
+		<ArmorRating_Heat>1.5</ArmorRating_Heat>
+      </statBases>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Heavy</mechWeightClass>
+      </race>
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_EternalGeneral</defName>
+      <label>eternal general</label>
+      <race>BMT_EternalGeneral</race>
+	  <startingHediffs>
+		<def>BMT_GeneralsCommand</def>
+	  </startingHediffs>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	   <weaponTags>
+        <li>BMT_UndeadChampionBlade</li>
+      </weaponTags>
+    </PawnKindDef>
+	
+		<!-- Fused Legion -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_FusedLegion</defName>
+      <label>fused legion</label>
+      <description>An unholy melding of multiple souls bound together in pieces of armor and weapons, the fused legion is an army unto itself. Its multiple sources of consciousness and extra limbs makes for a difficult foe.</description>
+      <statBases>
+        <MoveSpeed>3.0</MoveSpeed>
+		<ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+		<Flammability>0</Flammability>
+		<ArmorRating_Heat>2</ArmorRating_Heat>
+		<MeleeCooldownFactor>-0.4</MeleeCooldownFactor>
+		<MeleeHitChance>1.5</MeleeHitChance>
+      </statBases>
+	  <baseHealthScale>4</baseHealthScale>
+	  <baseBodySize>3</baseBodySize>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Heavy</mechWeightClass>
+      </race>
+	<tools>
+	  <li>
+		<label>Fist</label>
+		<capacities>
+          <li>Blunt</li>
+		</capacities>
+		<power>15</power>
+		<cooldownTime>4</cooldownTime>
+		<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Stun</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	  <li>
+		<label>Fist</label>
+		<capacities>
+          <li>Blunt</li>
+		</capacities>
+		<power>15</power>
+		<cooldownTime>4</cooldownTime>
+		<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+		<extraMeleeDamages>
+		  <li>
+			<def>Stun</def>
+			<amount>8</amount>
+			<chance>0.5</chance>
+		  </li>
+		</extraMeleeDamages>
+	  </li>
+	</tools>  
+    </ThingDef>
+    
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+      <defName>BMT_FusedLegion</defName>
+      <label>fused legion</label>
+      <race>BMT_FusedLegion</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+	   <weaponTags>
+        <li>BMT_LegionArmament</li>
+      </weaponTags>
+    </PawnKindDef>
+	
+		<!-- Blight Dragon -->  
+    <ThingDef ParentName="BMT_BaseUndead">
+      <defName>BMT_BlightDragon</defName>
+      <label>blight dragon</label>
+      <description>A dragon resurrected by accursed necromancy. Its flesh is visibly decayed yet it can still fly and breathe noxious gas (or acid) upon targets.</description>
+      <statBases>
+        <MoveSpeed>3.25</MoveSpeed>
+		<ArmorRating_Blunt>0.70</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.45</ArmorRating_Sharp>		
+		<ArmorRating_Heat>1</ArmorRating_Heat>
+		<Flammability>0</Flammability>
+		<MaxFlightTime>150</MaxFlightTime>
+		<FlightCooldown>25</FlightCooldown>
+      </statBases>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>ToxicBite</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.7</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+      <race>
+		<isImmuneToInfections>true</isImmuneToInfections>
+		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Medium</mechWeightClass>
+		<canFlyInVacuum>true</canFlyInVacuum>
+		<body>BMT_Dragonbody</body>
+      </race>
+    <butcherProducts>
+      <Leather_Lizard>15</Leather_Lizard>
+    </butcherProducts>	  
+    </ThingDef>
+    
+    <PawnKindDef ParentName="BaseMechanoidKind">
+      <defName>BMT_BlightDragon</defName>
+      <label>blight dragon</label>
+      <race>BMT_BlightDragon</race>
+			<flyingAnimationFramePathPrefix>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull_Flying_</flyingAnimationFramePathPrefix>
+			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
+			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
+			<flyingAnimationDrawSize>1</flyingAnimationDrawSize>
+			<flyingAnimationDrawSizeIsMultiplier>false</flyingAnimationDrawSizeIsMultiplier>
+			<flyingAnimationInheritColors>false</flyingAnimationInheritColors>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+    </PawnKindDef>
+</Defs>

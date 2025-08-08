@@ -21,7 +21,44 @@
     <buildingDamageFactorPassable>0.2</buildingDamageFactorPassable>
   </DamageDef>
 
+  <DamageDef>
+    <defName>BMT_Withering</defName>
+    <label>withering curse</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been killed by withering magic.</deathMessage>
+    <hediff>BMT_WitheringCurse</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Toxic</impactSoundType>
+    <damageEffecter>Impact_Toxic</damageEffecter>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <defaultDamage>1</defaultDamage>
+    <defaultArmorPenetration>0.5</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>0.1</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>0.1</buildingDamageFactorPassable>
+  </DamageDef>
 
+  <DamageDef>
+    <defName>BMT_LifeDrain</defName>
+    <label>arcane harm</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been killed by life-draining magic.</deathMessage>
+    <hediff>BMT_LifeDrainCurse</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Toxic</impactSoundType>
+    <damageEffecter>Impact_Toxic</damageEffecter>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0.5</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>0.1</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>0.1</buildingDamageFactorPassable>
+  </DamageDef>
+  
 <!-- Noxious Wound Damages -->
   <DamageDef Name="CutBase">
     <defName>BMT_NoxiousCut</defName>
@@ -121,6 +158,7 @@
     <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
     <scratchSplitPercentage>0.67</scratchSplitPercentage>
   </DamageDef>
+
   
   <!-- Projectile Damages -->
 

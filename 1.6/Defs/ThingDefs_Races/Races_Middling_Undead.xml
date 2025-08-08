@@ -8,6 +8,8 @@
       <description>Despite their emaciated and decaying body, the ghoul remains a terrifying undead creature thanks to their razor-like claws and jagged teeth. Their nasty claws tend to cause infections in the wounds of living creatures, should they even survive a mauling.</description>
       <statBases>
         <MoveSpeed>4.35</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>	
       </statBases>
 	  	<tools>
 	  <li>
@@ -118,6 +120,8 @@
       <description>Enchanted with the power of frost, the rimebone archer's arrows chill whatever they hit right down to the bone.</description>
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.15</ArmorRating_Sharp>			
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -156,9 +160,11 @@
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_TombToter</defName>
       <label>tomb toter</label>
-      <description>Despite their emaciated and decaying body, the ghoul remains a terrifying undead creature thanks to their razor-like claws and jagged teeth. Their nasty claws tend to cause infections in the wounds of living creatures, should they even survive a mauling.</description>
+      <description>Tomb-toters act as the perfect surprise for any necromancer's army. They move slow and take shots well, and when they finally die their cargo is released, usually well within range of the enemy.</description>
       <statBases>
         <MoveSpeed>4.35</MoveSpeed>
+		<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.10</ArmorRating_Sharp>	
       </statBases>
 	<mechWeightClass>Medium</mechWeightClass>
       <race>
@@ -222,6 +228,7 @@
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Medium</mechWeightClass>
+		<canFlyInVacuum>true</canFlyInVacuum>
       </race>
     </ThingDef>
     
@@ -305,6 +312,7 @@
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Medium</mechWeightClass>
+		<canFlyInVacuum>true</canFlyInVacuum>
       </race>
     </ThingDef>
     
@@ -344,6 +352,8 @@
       <description>A more intelligent skeleton capable of doing skilled magical attacks. It has a medium-durability arcane shield around it.</description>
       <statBases>
         <MoveSpeed>4</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.20</ArmorRating_Sharp>	
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -392,13 +402,15 @@
     </PawnKindDef>
 	
 	
-		<!-- Decaying Drummer -->  
+	<!-- Decaying Drummer -->  
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_DecayingDrummer</defName>
       <label>decaying drummer</label>
       <description>Drumming even after death, their beats inspire nearby undead to move faster and hit more often.</description>
       <statBases>
         <MoveSpeed>4.1</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.20</ArmorRating_Sharp>	
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -443,6 +455,8 @@
       <description>Bishops of rot and ruin are central to any undead army. Their censers spread toxic gas and their chanting speeds up healing to nearby allies.</description>
       <statBases>
         <MoveSpeed>4.1</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.10</ArmorRating_Sharp>	
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -495,6 +509,8 @@
       <description>Hulking monstrosities of undead flesh, the colossus is an unliving tank and siege engine. It moves at a very slow pace but is capable of crushing both enemies and structures with ease.</description>
       <statBases>
         <MoveSpeed>2</MoveSpeed>
+		<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.20</ArmorRating_Sharp>	
       </statBases>
 	  <baseHealthScale>3</baseHealthScale>
 	  <baseBodySize>2</baseBodySize>
@@ -542,7 +558,7 @@
 		</extraMeleeDamages>
 	  </li>
 	</tools>
-	<mechWeightClass>Medium</mechWeightClass>
+	<mechWeightClass>Heavy</mechWeightClass>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
@@ -579,6 +595,8 @@
       <description></description>
       <statBases>
         <MoveSpeed>3.0</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>	
       </statBases>
       <race>
         <mechEnabledWorkTypes>

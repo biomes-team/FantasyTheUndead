@@ -7,6 +7,8 @@
       <description>A basic zombie. Due to its undead state it doesn't feel pain, nor does it bleed.</description>
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>	
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -46,6 +48,8 @@
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
 		<Flammability>0</Flammability>
+		<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.10</ArmorRating_Sharp>			
 		<ArmorRating_Heat>1.5</ArmorRating_Heat>
       </statBases>
       <race>
@@ -85,6 +89,8 @@
       <description>A simpleminded risen peasant. They are weak in combat but can do dumb labor and move nearly as fast as living humans.</description>
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>			
       </statBases>
       <race>
         <mechEnabledWorkTypes>
@@ -173,8 +179,8 @@
       <description>A zombie warrior that wields a large rusty axe. Due to its inability to feel pain, it is only lightly armored. It tends to be used on the front lines and for cutting plants.</description>
       <statBases>
         <MoveSpeed>2.8</MoveSpeed>
-		<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
-		<ArmorRating_Sharp>0.25</ArmorRating_Sharp>		
+		<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.20</ArmorRating_Sharp>		
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -216,7 +222,7 @@
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_RisenFootsoldier</defName>
       <label>risen footsoldier</label>
-      <description>A skeletal fighter wearing rusty armor and wielding a large longsword. Their attacks are slow but devastating against targets with little to no armor.</description>
+      <description>A skeletal fighter wearing rusty armor and wielding a longsword. Their attacks are slow but devastating against targets with little to no armor.</description>
       <statBases>
         <MoveSpeed>4.0</MoveSpeed>
 		<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
@@ -264,6 +270,8 @@
       <description>A disgusting and bulging wretch of an undead that produces a toxic and acidic explosion on death. Its limited melee attacks sometimes splatter acid from burst pustules onto enemies.</description>
       <statBases>
         <MoveSpeed>4.0</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>	
       </statBases>
 	  	<tools>
 	  <li>
@@ -353,6 +361,8 @@
         <MoveSpeed>4.25</MoveSpeed>
 		<Flammability>0.1</Flammability>
 		<ArmorRating_Heat>1</ArmorRating_Heat>
+		<ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>			
       </statBases>
       <race>
         <mechEnabledWorkTypes>
@@ -399,6 +409,8 @@
         <MoveSpeed>4.25</MoveSpeed>
 		<PlantWorkSpeed>0.80</PlantWorkSpeed>
 		<AnimalGatherSpeed>0.75</AnimalGatherSpeed>
+		<ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>	
       </statBases>
       <race>
         <mechEnabledWorkTypes>
@@ -446,9 +458,11 @@
       <label>ironbones</label>
       <description>A risen skeleton whose bones are fully encased in jagged metal. They are highly resistant to damage but move very slowly.</description>
       <statBases>
-        <MoveSpeed>4.25</MoveSpeed>
+        <MoveSpeed>3</MoveSpeed>
 		<Flammability>0</Flammability>
 		<ArmorRating_Heat>2.0</ArmorRating_Heat>
+		<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.35</ArmorRating_Sharp>	
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -532,6 +546,8 @@
         <MoveSpeed>4.0</MoveSpeed>
 		<Flammability>0</Flammability>
 		<ArmorRating_Heat>2</ArmorRating_Heat>
+		<ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>			
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -587,6 +603,8 @@
       <description>Reanimated hounds that are undyingly loyal. Packs are often used by dog-loving necromancers to tear apart enemies or nuzzle loved ones.</description>
       <statBases>
         <MoveSpeed>5.0</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>	
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -692,6 +710,8 @@
       <description>Reanimated as an undead, this bear no longer feeds on honey, berries, and meats, but instead hunts down whatever its creator wishes. Its thick blubber and lack of pain makes it a formidable fighter.</description>
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
+		<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.15</ArmorRating_Sharp>			
       </statBases>
       <race>
         <maxPreyBodySize>3</maxPreyBodySize>
@@ -731,9 +751,11 @@
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_ZombieHorse</defName>
       <label>zombie horse</label>
-      <description>A simple zombified horse. It's not very useful for combat, but its lack of need for rest or food makes it perfect for caravans or riding. </description>
+      <description>A simple zombified horse. It's not very useful for combat, but its lack of need for rest or food makes it perfect for caravans or riding.</description>
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
+		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>			
       </statBases>
       <race>
         <body>QuadrupedAnimalWithHooves</body>
@@ -771,9 +793,13 @@
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_SkeletalHorse</defName>
       <label>skeletal horse</label>
-      <description>A simple skeletal horse. It's not very useful for combat, but its lack of need for rest or food makes it perfect for caravans or riding. </description>
+      <description>A simple skeletal horse. It's not very useful for combat, but its lack of need for rest or food makes it perfect for caravans or riding.</description>
       <statBases>
         <MoveSpeed>4.25</MoveSpeed>
+		<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.10</ArmorRating_Sharp>	
+		<ArmorRating_Heat>2.00</ArmorRating_Heat>
+		<Flammability>0</Flammability>
       </statBases>
       <race>
         <body>QuadrupedAnimalWithHooves</body>
@@ -815,6 +841,8 @@
       <description>A somewhat dim-witted reanimated builder. They're not as good as a living person, but they get simpler jobs done.</description>
       <statBases>
         <MoveSpeed>3.0</MoveSpeed>
+		<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.10</ArmorRating_Sharp>			
       </statBases>
       <race>
         <mechEnabledWorkTypes>
@@ -885,6 +913,7 @@
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Light</mechWeightClass>
+		<canFlyInVacuum>true</canFlyInVacuum>		
       </race>
     </ThingDef>
     

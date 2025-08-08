@@ -216,6 +216,7 @@
     <onlyLifeThreateningTo>
       <li>Heart</li>
 	  <li>Liver</li>
+	  <li>Brain</li>
     </onlyLifeThreateningTo>
     <removeOnQuestLodgers>true</removeOnQuestLodgers>
     <stages>
@@ -641,6 +642,61 @@
       <li>
         <statOffsets>
           <InjuryHealingFactor>1.5</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+    <HediffDef ParentName="RoleStatBuff">
+    <defName>BMT_GeneralsCommand</defName>
+    <label>eternal general's command</label>
+    <description>By encouraging and commanding nearby allies, this undead general can enhance their focus in combat and thus their battle performance.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <range>12.9</range>
+        <mote>Mote_CombatCommand</mote>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>true</canTargetMechs>
+          <onlyTargetColonists>false</onlyTargetColonists>
+        </targetingParameters>
+        <hediff>CombatCommandBuff</hediff>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>BMT_GeneralsCommandBuff</defName>
+    <label>general's command buff</label>
+    <description>Combat abilities are boosted thanks to being near the undead general who is using the general's command ability.</description>
+    <debugLabelExtra>other</debugLabelExtra>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_Link">
+        <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+        <maxDistance>10</maxDistance>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+          <MeleeHitChance>3</MeleeHitChance>
+		  <RangedCooldownFactor>-0.4</RangedCooldownFactor>	
+		  <MeleeCooldownFactor>-0.4</MeleeCooldownFactor>
         </statOffsets>
       </li>
     </stages>
