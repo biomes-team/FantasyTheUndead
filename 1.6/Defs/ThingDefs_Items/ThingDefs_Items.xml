@@ -1,622 +1,144 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-<!-- Ranged --> 
-  <ThingDef Name="LightUndeadRanged" ParentName="BaseWeapon" Abstract="True">
-    <tradeability>None</tradeability>
-    <destroyOnDrop>true</destroyOnDrop>
-    <relicChance>0</relicChance>
-    <graphicData>
-      <drawSize>0.65</drawSize>
-    </graphicData>
-    <equippedDistanceOffset>-0.14</equippedDistanceOffset>
-    <tools>
-      <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2.6</cooldownTime>
-      </li>
-    </tools>
-  </ThingDef>
+	<!-- Ectoplasm Resource -->
+	<ThingDef ParentName="ResourceBase">
+		<defName>BMT_Ectoplasm</defName>
+		<label>ectoplasm</label>
+		<description>A slime-like substance produced by spectral undead. It is the primary component in creating your own ghosts, wraiths, and more.</description>
+		<possessionCount>20</possessionCount>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>BMT_FantasyTheUndead/Things/Item/UndeadArbalest/UndeadArbalest</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>0.85</drawSize>
+		</graphicData>
+		<stackLimit>150</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<intricate>true</intricate> <!-- Not returned to player when product made of this is smelted. -->
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>1.5</MarketValue>
+			<Mass>0.05</Mass>
+			<Beauty>1</Beauty>
+			<Flammability>0.75</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>1.75</glowRadius>
+				<glowColor>(113,138,190,0)</glowColor>
+			</li>
+		</comps>
+		<allowedArchonexusCount>100</allowedArchonexusCount>
+	</ThingDef>
   
-    <ThingDef Name="LightUndeadRangedWeapon" ParentName="LightUndeadRanged" Abstract="True">
-    <weaponClasses>
-      <li>Ranged</li>
-    </weaponClasses>
-  </ThingDef>
-  
-    <ThingDef ParentName="LightUndeadRangedWeapon">
-    <defName>BMT_RustedArbalest</defName>
-    <label>rusted arbalest</label>
-    <description>An old and rusted arbalest used by undead arbalisters.</description>
-    <possessionCount>1</possessionCount>
+  <!-- Rotting Flesh Resource -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>BMT_RottingFlesh</defName>
+    <label>rotting meat</label>
+    <description>Meat from fleshy undead.</description>
     <graphicData>
-      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadArbalest/UndeadArbalest</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>BiomesCore_Things/Items/Meat/MeatFish</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
-    <soundInteract>Bow_Small</soundInteract>
+    <socialPropernessMatters>true</socialPropernessMatters>
     <statBases>
-      <Mass>1.5</Mass>
-      <AccuracyTouch>0.75</AccuracyTouch>
-      <AccuracyShort>0.45</AccuracyShort>
-      <AccuracyMedium>0.65</AccuracyMedium>
-      <AccuracyLong>0.25</AccuracyLong>
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>7</DeteriorationRate>
+      <Mass>0.03</Mass>
+      <MarketValue>2</MarketValue>
+      <Nutrition>0.025</Nutrition>
     </statBases>
-    <weaponTags>
-      <li>BMT_RustedArbalest</li>
-    </weaponTags>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Arrow_Short</defaultProjectile>
-        <warmupTime>1.55</warmupTime>
-        <range>29.9</range>
-        <soundCast>Bow_Small</soundCast>
+    <ingestible>
+      <foodType>Meat</foodType>
+      <preferability>RawTasty</preferability>
+      <tasteThought>AteRawFish</tasteThought>
+      <ingestEffect>EatMeat</ingestEffect>
+      <ingestSound>RawMeat_Eat</ingestSound>
+    </ingestible>
+    <thingCategories>
+      <li>MeatRaw</li>
+    </thingCategories>
+    <ingredient>
+      <mergeCompatibilityTags>
+        <li MayRequire="Ludeon.RimWorld.Ideology">MeatEating</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>14</daysToRotStart>
       </li>
-    </verbs>
+    </comps>
+    <tickerType>Rare</tickerType>
   </ThingDef>
   
-    <ThingDef ParentName="LightUndeadRangedWeapon">
-    <defName>BMT_RotBow</defName>
-    <label>rotting bow</label>
-    <description>An old and worn longbow that smells of decay. It is used by rotting rangers.</description>
-    <possessionCount>1</possessionCount>
-    <graphicData>
-      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadBow/UndeadBow</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Bow_Small</soundInteract>
-    <statBases>
-      <Mass>1.5</Mass>
-      <AccuracyTouch>0.75</AccuracyTouch>
-      <AccuracyShort>0.45</AccuracyShort>
-      <AccuracyMedium>0.65</AccuracyMedium>
-      <AccuracyLong>0.75</AccuracyLong>
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
-    </statBases>
-    <weaponTags>
-      <li>BMT_RotBow</li>
-    </weaponTags>
-    <verbs>
+  <!-- Rotting Meat Thought Def -->
+    <ThoughtDef>
+    <defName>BMT_AteRottingFlesh</defName>
+    <thoughtClass>Thought_FoodEaten</thoughtClass>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>1</durationDays>
+    <stages>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Arrow_Great</defaultProjectile>
-        <warmupTime>1.25</warmupTime>
-        <range>39.9</range>
-        <soundCast>Bow_Small</soundCast>
+        <label>ate rotting flesh</label>
+        <description>I had to eat rotting flesh. I'm pretty sure some of it was previously human flesh!</description>
+        <baseMoodEffect>-25</baseMoodEffect>
       </li>
-    </verbs>
-  </ThingDef>
+    </stages>
+  </ThoughtDef>
   
-   <ThingDef ParentName="LightUndeadRangedWeapon">
-    <defName>BMT_RimeBow</defName>
-    <label>rime bow</label>
-    <description>An old longbow worn by the weather and chill. It is enchanted with icy damage.</description>
-    <possessionCount>1</possessionCount>
-    <graphicData>
-      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadRimebow/UndeadRimebow</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Bow_Small</soundInteract>
-    <statBases>
-      <Mass>1.5</Mass>
-      <AccuracyTouch>0.75</AccuracyTouch>
-      <AccuracyShort>0.45</AccuracyShort>
-      <AccuracyMedium>0.65</AccuracyMedium>
-      <AccuracyLong>0.75</AccuracyLong>
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
-    </statBases>
-    <weaponTags>
-      <li>BMT_RimeBow</li>
-    </weaponTags>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Arrow_Recurve</defaultProjectile>
-        <warmupTime>1.25</warmupTime>
-        <range>39.9</range>
-        <soundCast>Bow_Small</soundCast>
-      </li>
-    </verbs>
-  </ThingDef>
-  
-    <ThingDef ParentName="BaseProjectileNeolithic">
-    <defName>BMT_RimeArrow</defName>
-    <label>rime bow arrow</label>
-    <graphicData>
-      <texPath>Things/Projectile/Arrow_Small</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <projectile>
-      <damageDef>BMT_RimeArrow</damageDef>
-      <damageAmountBase>15</damageAmountBase>
-      <stoppingPower>1</stoppingPower>
-      <speed>56</speed>
-    </projectile>
- 
-  
-    <ThingDef ParentName="LightUndeadRangedWeapon">
-    <defName>BMT_InitiateStaff</defName>
-    <label>initiate staff</label>
-    <description>An arcane staff used by undying initiates.</description>
-    <possessionCount>1</possessionCount>
-    <graphicData>
-      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadStaffInitiate/UndeadStaffInitiate</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Bow_Small</soundInteract>
-    <statBases>
-      <Mass>1.5</Mass>
-      <AccuracyTouch>0.75</AccuracyTouch>
-      <AccuracyShort>0.45</AccuracyShort>
-      <AccuracyMedium>0.65</AccuracyMedium>
-      <AccuracyLong>0.25</AccuracyLong>
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
-    </statBases>
-    <weaponTags>
-      <li>BMT_InitiateStaff</li>
-    </weaponTags>
-    <verbs>
-      <li>
-        <verbClass>Verb_ShootBeam</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <warmupTime>1.0</warmupTime>
-        <range>7.9</range>
-        <minRange>2</minRange>
-        <beamFullWidthRange>6.9</beamFullWidthRange>
-        <burstShotCount>1</burstShotCount>
-        <showBurstShotStats>false</showBurstShotStats>
-        <beamWidth>6</beamWidth>
-        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
-        <beamDamageDef>BMT_ArcaneHarm</beamDamageDef>
-        <soundCastTail>GunTail_Medium</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
-        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
-        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
-        <beamMaxDeviation>1.5</beamMaxDeviation>
-        <beamCurvature>0.6</beamCurvature>
-        <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
-        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
-        <beamChanceToStartFire>0.85</beamChanceToStartFire>
-        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
-        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
-        <beamStartOffset>0.8</beamStartOffset>
-        <beamLineFleckChanceCurve>
-          <points>
-            <li>(0, 0)</li>
-            <li>(0.65, 0.4)</li>
-            <li>(1, 0.75)</li>
-          </points>
-        </beamLineFleckChanceCurve>
-      </li>
-    </verbs>
-  </ThingDef>
-  
-    <ThingDef ParentName="LightUndeadRangedWeapon">
-    <defName>BMT_DiscipleStaff</defName>
-    <label>disciple staff</label>
-    <description>An arcane staff used by undying disciples.</description>
-    <possessionCount>1</possessionCount>
-    <graphicData>
-      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadStaffDisciple/UndeadStaffDisciple</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Bow_Small</soundInteract>
-    <statBases>
-      <Mass>1.5</Mass>
-      <AccuracyTouch>0.75</AccuracyTouch>
-      <AccuracyShort>0.45</AccuracyShort>
-      <AccuracyMedium>0.65</AccuracyMedium>
-      <AccuracyLong>0.25</AccuracyLong>
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
-    </statBases>
-    <weaponTags>
-      <li>BMT_DiscipleStaff</li>
-    </weaponTags>
-    <verbs>
-      <li>
-        <verbClass>Verb_ShootBeam</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <warmupTime>1.0</warmupTime>
-        <range>10.9</range>
-        <minRange>1</minRange>
-        <beamFullWidthRange>6.9</beamFullWidthRange>
-        <burstShotCount>2</burstShotCount>
-        <showBurstShotStats>false</showBurstShotStats>
-        <beamWidth>6</beamWidth>
-        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
-        <beamDamageDef>BMT_ArcaneHarm</beamDamageDef>
-        <soundCastTail>GunTail_Medium</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
-        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
-        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
-        <beamMaxDeviation>1.5</beamMaxDeviation>
-        <beamCurvature>0.6</beamCurvature>
-        <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
-        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
-        <beamChanceToStartFire>0.85</beamChanceToStartFire>
-        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
-        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
-        <beamStartOffset>0.8</beamStartOffset>
-        <beamLineFleckChanceCurve>
-          <points>
-            <li>(0, 0)</li>
-            <li>(0.65, 0.4)</li>
-            <li>(1, 0.75)</li>
-          </points>
-        </beamLineFleckChanceCurve>
-      </li>
-    </verbs>
-  </ThingDef>
-  
-      <ThingDef ParentName="LightUndeadRangedWeapon">
-    <defName>BMT_AdeptStaff</defName>
-    <label>adept staff</label>
-    <description>An arcane staff used by undying adepts.</description>
-    <possessionCount>1</possessionCount>
-    <graphicData>
-      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadStaffAdept/UndeadStaffAdept</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Bow_Small</soundInteract>
-    <statBases>
-      <Mass>1.5</Mass>
-      <AccuracyTouch>0.75</AccuracyTouch>
-      <AccuracyShort>0.45</AccuracyShort>
-      <AccuracyMedium>0.65</AccuracyMedium>
-      <AccuracyLong>0.25</AccuracyLong>
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
-    </statBases>
-    <weaponTags>
-      <li>BMT_DiscipleStaff</li>
-    </weaponTags>
-    <verbs>
-      <li>
-        <verbClass>Verb_ShootBeam</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <warmupTime>1.0</warmupTime>
-        <range>15.9</range>
-        <minRange>1</minRange>
-        <beamFullWidthRange>6.9</beamFullWidthRange>
-        <burstShotCount>3</burstShotCount>
-        <showBurstShotStats>false</showBurstShotStats>
-        <beamWidth>6</beamWidth>
-        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
-        <beamDamageDef>BMT_ArcaneHarm</beamDamageDef>
-        <soundCastTail>GunTail_Medium</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
-        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
-        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
-        <beamMaxDeviation>1.5</beamMaxDeviation>
-        <beamCurvature>0.6</beamCurvature>
-        <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
-        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
-        <beamChanceToStartFire>0.85</beamChanceToStartFire>
-        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
-        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
-        <beamStartOffset>0.8</beamStartOffset>
-        <beamLineFleckChanceCurve>
-          <points>
-            <li>(0, 0)</li>
-            <li>(0.65, 0.4)</li>
-            <li>(1, 0.75)</li>
-          </points>
-        </beamLineFleckChanceCurve>
-      </li>
-    </verbs>
-  </ThingDef>
-  
-    <ThingDef ParentName="BaseHumanMakeableGun">
-    <defName>BMT_BishopCenser</defName>
-    <label>bishop of rot and ruin censer</label>
-    <description>An ornate censer used to spread toxic smoke. Useful against the living, less so against the undead.</description>
-    <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/SmokeLauncher</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Interact_Rifle</soundInteract>
-    <generateCommonality>0.3</generateCommonality>
-    <weaponClasses>
-      <li>RangedHeavy</li>
-    </weaponClasses>
-    <statBases>
-      <WorkToMake>30000</WorkToMake>
-      <Mass>3.4</Mass>
-      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
-    </statBases>
-    <costList>
-      <Steel>75</Steel>
-      <ComponentIndustrial>4</ComponentIndustrial>
-    </costList>
-    <weaponTags Inherit="False">
-      <li>BMT_BishopCenser</li>
-    </weaponTags>
-    <recipeMaker>
-      <skillRequirements>
-        <Crafting>4</Crafting>
-      </skillRequirements>
-      <displayPriority>465</displayPriority>
-    </recipeMaker>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_ToxbombLauncher</defaultProjectile>
-        <warmupTime>3.5</warmupTime>
-        <range>7.9</range>
-        <forcedMissRadius>1.9</forcedMissRadius>
-        <burstShotCount>1</burstShotCount>
-        <soundCast>Shot_IncendiaryLauncher</soundCast>
-        <soundCastTail>GunTail_Medium</soundCastTail>
-        <muzzleFlashScale>0</muzzleFlashScale>
-        <targetParams>
-          <canTargetLocations>true</canTargetLocations>
-        </targetParams>
-      </li>
-    </verbs>
-    <tools>
-      <li>
-        <label>stock</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>2</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-      <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
-        </capacities>
-        <power>2</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-    </tools>
-  </ThingDef>
-  
-  <ThingDef ParentName="BaseBullet">
-    <defName>BMT_CenserLob</defName>
-    <label>condensed toxic smoke</label>
-    <graphicData>
-      <texPath>Things/Projectile/LauncherShot</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>TransparentPostLight</shaderType>
-      <color>(140,135,156)</color>
-    </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
-    <projectile>
-      <speed>20</speed>
-      <damageDef>ToxGas</damageDef>
-      <explosionRadius>4.9</explosionRadius>
-      <explosionRadiusDisplayPadding>5</explosionRadiusDisplayPadding>
-      <postExplosionGasType>ToxGas</postExplosionGasType>
-      <ai_IsIncendiary>false</ai_IsIncendiary>
-      <arcHeightFactor>0.2</arcHeightFactor>
-      <shadowSize>0.6</shadowSize>
-      <screenShakeFactor>0.5</screenShakeFactor>
-    </projectile>
-  </ThingDef>
-
-<!-- Melee -->
-
-  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
-    <defName>BMT_RustedAxe</defName>
-    <label>rusted axe</label>
-    <description>A worn and rusty axe wielded by a specific type of zombie.</description>
-    <techLevel>Medieval</techLevel>
-    <statBases>
-      <WorkToMake>7000</WorkToMake>
-      <Mass>1.5</Mass>
-    </statBases>
-    <weaponTags>
-      <li>BMT_RustedAxe</li>
-    </weaponTags>
-    <recipeMaker IsNull="True"/>
-    <smeltable>False</smeltable>
-    <tools>
-      <li>
-        <label>handle</label>
-        <capacities>
-          <li>Poke</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-      <li>
-        <label>edge</label>
-        <capacities>
-          <li>Cut</li>
-        </capacities>
-        <power>15</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-    </tools>
-    <equippedAngleOffset>-65</equippedAngleOffset>
-    <graphicData>
-      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadAxe/UndeadAxe</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-  </ThingDef>
-  
-    <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
-    <defName>BMT_RustedLongsword</defName>
-    <label>rusted longsword</label>
-    <description>An old and rusted longsword. It is wielded by undead soldiers.</description>
-    <graphicData>
-      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadLongsword/UndeadLongsword</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <weaponTags>
-      <li>BMT_RustedLongsword</li>
-    </weaponTags>
-    <!-- <costStuffCount>100</costStuffCount> -->
-    <!-- <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags> -->
-    <recipeMaker IsNull="True"/>
-    <smeltable>False</smeltable>
-    <statBases>
-      <Mass>2</Mass>
-    </statBases>
-    <equippedAngleOffset>-65</equippedAngleOffset>
-    <tools>
-      <li>
-        <label>handle</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-      <li>
-        <label>point</label>
-        <capacities>
-          <li>Stab</li>
-        </capacities>
-        <power>23</power>
-        <cooldownTime>2.6</cooldownTime>
-      </li>
-      <li>
-        <label>edge</label>
-        <capacities>
-          <li>Cut</li>
-        </capacities>
-        <power>23</power>
-        <cooldownTime>2.6</cooldownTime>
-      </li>
-    </tools>
-  </ThingDef>
-  
-    <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
-    <defName>BMT_RustyPitchfork</defName>
-    <label>rusty pitchfork</label>
-    <description>An old rusty pitchfork used by zombie farmers. It's not the best weapon but it works in a pinch.</description>
-    <techLevel>Medieval</techLevel>
-    <statBases>
-      <WorkToMake>7000</WorkToMake>
-      <Mass>1.5</Mass>
-    </statBases>
-    <weaponTags>
-      <li>BMT_RustyPitchfork</li>
-    </weaponTags>
-    <recipeMaker IsNull="True"/>
-    <smeltable>False</smeltable>
-    <tools>
-      <li>
-        <label>handle</label>
-        <capacities>
-          <li>Poke</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-      <li>
-        <label>edge</label>
-        <capacities>
-          <li>Cut</li>
-        </capacities>
-        <power>15</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-    </tools>
-    <equippedAngleOffset>-65</equippedAngleOffset>
-    <graphicData>
-      <texPath>Things/Item/Equipment/WeaponMelee/Axe</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-  </ThingDef>
-  
- 
-   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
-    <defName>BMT_RustedPickaxe</defName>
-    <label>rusted pickaxe</label>
-    <description>A worn and rusty pickaxe wielded by a specific type of zombie.</description>
-    <techLevel>Medieval</techLevel>
-    <statBases>
-      <WorkToMake>7000</WorkToMake>
-      <Mass>1.5</Mass>
-    </statBases>
-    <weaponTags>
-      <li>BMT_RustedPickaxe</li>
-    </weaponTags>
-    <recipeMaker IsNull="True"/>
-    <smeltable>False</smeltable>
-    <tools>
-      <li>
-        <label>handle</label>
-        <capacities>
-          <li>Poke</li>
-        </capacities>
-        <power>12</power>
-        <cooldownTime>1</cooldownTime>
-      </li>
-      <li>
-        <label>point</label>
-        <capacities>
-          <li>Stab</li>
-        </capacities>
-        <power>15</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-    </tools>
-    <equippedAngleOffset>-65</equippedAngleOffset>
-    <graphicData>
-      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadPickaxe/UndeadPickaxe</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-  </ThingDef>
-  
-    <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
-    <defName>BMT_DecayingDrum</defName>
-    <label>decaying drum</label>
-    <description>A weathered and beaten drum used by the decaying drummer skeleton.</description>
-    <techLevel>Medieval</techLevel>
-    <statBases>
-      <WorkToMake>7000</WorkToMake>
-      <Mass>1.5</Mass>
-    </statBases>
-    <weaponTags>
-      <li>BMT_DecayingDrum</li>
-    </weaponTags>
-    <recipeMaker IsNull="True"/>
-    <smeltable>False</smeltable>
-    <tools>
-      <li>
-        <label>handle</label>
-        <capacities>
-          <li>Poke</li>
-        </capacities>
-        <power>4</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-      <li>
-        <label>edge</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>4</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-    </tools>
-    <equippedAngleOffset>0</equippedAngleOffset>
-    <graphicData>
-      <texPath>BMT_FantasyTheUndead/Things/Item/UndeadDrum/UndeadDrum</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-  </ThingDef>
-  
-
+  <!-- Bones Resource --> 
+  	<ThingDef ParentName="ResourceBase">
+		<defName>BMT_Bones</defName>
+		<label>bones</label>
+		<description>Bones from various corpses. They are primarily used in creating new undead, especially skeletons.</description>
+		<graphicData>
+			<texPath>BiomesCore_Things/Items/Meat/MeatFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<stackLimit>50</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>5</MarketValue>
+			<Mass>1</Mass>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>1</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
+	
+	<!-- Souls Resource -->
+  	<ThingDef ParentName="ResourceBase">
+		<defName>BMT_Souls</defName>
+		<label>soul</label>
+		<description>Souls from the deceased. They are usually extracted through dark rituals. Liches devour them.</description>
+		<graphicData>
+			<texPath>BiomesCore_Things/Items/Meat/MeatFish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<stackLimit>50</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>25</MarketValue>
+			<Mass>1</Mass>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>1</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
 </Defs>
