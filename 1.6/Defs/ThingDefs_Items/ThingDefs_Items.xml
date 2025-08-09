@@ -9,7 +9,7 @@
 		<possessionCount>20</possessionCount>
 		<tickerType>Normal</tickerType>
 		<graphicData>
-			<texPath>BMT_FantasyTheUndead/Things/Item/UndeadArbalest/UndeadArbalest</texPath>
+			<texPath>BMT_FantasyTheUndead/Things/Item/Ectoplasm</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 			<drawSize>0.85</drawSize>
 		</graphicData>

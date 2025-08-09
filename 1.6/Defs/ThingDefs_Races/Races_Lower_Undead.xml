@@ -17,7 +17,7 @@
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_Zombie</defName>
       <label>zombie</label>
       <race>BMT_Zombie</race>
@@ -59,7 +59,7 @@
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_Skeleton</defName>
       <label>skeleton</label>
       <race>BMT_Skeleton</race>
@@ -147,10 +147,11 @@
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_BoneArbalister</defName>
       <label>bone arbalister</label>
       <race>BMT_BoneArbalister</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -186,16 +187,17 @@
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Light</mechWeightClass>
+		<mechEnabledWorkTypes>
+          <li>PlantCutting</li>
+        </mechEnabledWorkTypes>
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_RottingAxeman</defName>
       <label>rotting axeman</label>
       <race>BMT_RottingAxeman</race>
-        <mechEnabledWorkTypes>
-          <li>PlantCutting</li>
-        </mechEnabledWorkTypes>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -237,10 +239,11 @@
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_RisenFootsoldier</defName>
       <label>risen footsoldier</label>
       <race>BMT_RisenFootsoldier</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -328,7 +331,7 @@
     </ThingDef>
     
 
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_Bloater</defName>
       <label>bloater</label>
       <race>BMT_Bloater</race>
@@ -374,10 +377,11 @@
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_RottingRanger</defName>
       <label>rotting ranger</label>
       <race>BMT_RottingRanger</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -514,10 +518,11 @@
 	</tools>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_Ironbones</defName>
       <label>ironbones</label>
       <race>BMT_Ironbones</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -570,10 +575,11 @@
     </comps>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_UndyingInitiate</defName>
       <label>undying initiate</label>
       <race>BMT_UndyingInitiate</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -681,10 +687,11 @@
     </tools>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_RotHound</defName>
       <label>rot hound</label>
       <race>BMT_RotHound</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -714,20 +721,86 @@
 		<ArmorRating_Sharp>0.15</ArmorRating_Sharp>			
       </statBases>
       <race>
-        <maxPreyBodySize>3</maxPreyBodySize>
         <body>QuadrupedAnimalWithPaws</body>
         <baseBodySize>2.15</baseBodySize>
         <baseHealthScale>2.5</baseHealthScale>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
-		<mechWeightClass>Light</mechWeightClass>
+		<mechWeightClass>Medium</mechWeightClass>
       </race>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>17</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>17</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>23.6</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.5</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>	  
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_RevoltingBear</defName>
       <label>revolting bear</label>
       <race>BMT_RevoltingBear</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -763,8 +836,51 @@
         <baseHealthScale>1.75</baseHealthScale>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
-		<mechWeightClass>Light</mechWeightClass>
+		<mechWeightClass>Medium</mechWeightClass>
       </race>
+	      <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.9</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+      <li>
+        <label>left hoof</label>
+        <labelNoLocation>hoof</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right hoof</label>
+        <labelNoLocation>hoof</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.5</chanceFactor>
+      </li>
+    </tools>
     </ThingDef>
     
     <PawnKindDef ParentName="NonCombatLightMechanoidKind">
@@ -807,8 +923,51 @@
         <baseHealthScale>1.75</baseHealthScale>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
-		<mechWeightClass>Light</mechWeightClass>
+		<mechWeightClass>Medium</mechWeightClass>
       </race>
+	      <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.9</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+      <li>
+        <label>left hoof</label>
+        <labelNoLocation>hoof</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right hoof</label>
+        <labelNoLocation>hoof</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.5</chanceFactor>
+      </li>
+    </tools>
     </ThingDef>
     
     <PawnKindDef ParentName="NonCombatLightMechanoidKind">
@@ -899,7 +1058,7 @@
 		</capacities>
 		<power>1</power>
 		<cooldownTime>2</cooldownTime>
-		<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+		<linkedBodyPartsGroup>BMT_WispAttackTool</linkedBodyPartsGroup>
 		<extraMeleeDamages>
 		  <li>
 			<def>Beam</def>
@@ -917,10 +1076,11 @@
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_WilloWisp</defName>
       <label>will-o-wisp</label>
       <race>BMT_WilloWisp</race>
+	  <combatPower>70</combatPower>
 			<flyingAnimationFramePathPrefix>BMT_FantasyTheUndead/Things/Creatures/Wisp/Wisp_Flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
 			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>

@@ -141,7 +141,7 @@
       <stoppingPower>1</stoppingPower>
       <speed>56</speed>
     </projectile>
- 
+   </ThingDef>
   
     <ThingDef ParentName="LightUndeadRangedWeapon">
     <defName>BMT_InitiateStaff</defName>

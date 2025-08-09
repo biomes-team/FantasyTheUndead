@@ -8,7 +8,7 @@
     <workerClass>DamageWorker_AddInjury</workerClass>
     <externalViolence>true</externalViolence>
     <deathMessage>{0} has been killed by dark magic.</deathMessage>
-    <hediff>BMT_ArcaneHarm</hediff>
+    <hediff>BMT_ArcaneWound</hediff>
     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
     <impactSoundType>Bullet</impactSoundType>
     <armorCategory>Heat</armorCategory>
@@ -149,8 +149,8 @@
   </DamageDef>
 
   <DamageDef ParentName="Scratch">
-    <defName>BMT_NoxiousScratch</defName>
-    <label>noxious scratch</label>
+    <defName>BMT_RaggedScratch</defName>
+    <label>ragged scratch</label>
     <hediff>BMT_RaggedScratch</hediff>
     <hediffSolid>Crack</hediffSolid>
     <impactSoundType>Slice</impactSoundType>

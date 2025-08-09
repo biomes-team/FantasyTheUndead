@@ -38,6 +38,7 @@
       <defName>BMT_Wraith</defName>
       <label>wraith</label>
       <race>BMT_Wraith</race>
+	  <combatPower>200</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -85,6 +86,7 @@
       <defName>BMT_Shadow</defName>
       <label>shadow</label>
       <race>BMT_Shadow</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -134,10 +136,11 @@
     </comps>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_UndyingAdept</defName>
       <label>undying adept</label>
       <race>BMT_UndyingAdept</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -178,10 +181,11 @@
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_ChampionOfDecay</defName>
       <label>champion of decay</label>
       <race>BMT_ChampionOfDecay</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -222,10 +226,11 @@
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_EternalGeneral</defName>
       <label>eternal general</label>
       <race>BMT_EternalGeneral</race>
+	  <combatPower>70</combatPower>
 	  <startingHediffs>
 		<def>BMT_GeneralsCommand</def>
 	  </startingHediffs>
@@ -264,12 +269,12 @@
 		<MeleeCooldownFactor>-0.4</MeleeCooldownFactor>
 		<MeleeHitChance>1.5</MeleeHitChance>
       </statBases>
-	  <baseHealthScale>4</baseHealthScale>
-	  <baseBodySize>3</baseBodySize>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Heavy</mechWeightClass>
+	    <baseHealthScale>4</baseHealthScale>
+	    <baseBodySize>3</baseBodySize>		
       </race>
 	<tools>
 	  <li>
@@ -307,10 +312,11 @@
 	</tools>  
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_FusedLegion</defName>
       <label>fused legion</label>
       <race>BMT_FusedLegion</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -404,6 +410,7 @@
       <defName>BMT_BlightDragon</defName>
       <label>blight dragon</label>
       <race>BMT_BlightDragon</race>
+	  <combatPower>70</combatPower>
 			<flyingAnimationFramePathPrefix>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull_Flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
 			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>

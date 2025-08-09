@@ -2,7 +2,7 @@
 <Defs>
 
   <HediffDef ParentName="BurnBase">
-    <defName>BMT_ArcaneHarm</defName>
+    <defName>BMT_ArcaneWound</defName>
     <label>arcane harm</label>
     <labelNoun>An arcane wound</labelNoun>
     <description>A burn-like wound caused by an arcane source.</description>
@@ -263,7 +263,7 @@
       </li>
       <li Class="HediffCompProperties_DestroyOrgan">
         <messageText>{PAWN_labelShort}'s {1} was destroyed by the withering curse.</messageText>
-        <damageType>Withered</damageType>
+        <damageType>BMT_Withering</damageType>
 	  </li>
     </comps>
   </HediffDef>

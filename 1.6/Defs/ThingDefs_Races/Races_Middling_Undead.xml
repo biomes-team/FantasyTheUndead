@@ -73,7 +73,7 @@
 		</capacities>
 		<power>7</power>
 		<cooldownTime>2</cooldownTime>
-		<linkedBodyPartsGroup>Jaw</linkedBodyPartsGroup>
+		<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
 		<extraMeleeDamages>
 		  <li>
 			<def>Stun</def>
@@ -83,10 +83,10 @@
 		</extraMeleeDamages>
 	  </li>
 	</tools>
-	<mechWeightClass>Medium</mechWeightClass>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Medium</mechWeightClass>
       </race>
     </ThingDef>
     
@@ -94,6 +94,7 @@
       <defName>BMT_Ghoul</defName>
       <label>ghoul</label>
       <race>BMT_Ghoul</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -134,6 +135,7 @@
       <defName>BMT_RimeboneArcher</defName>
       <label>rimebone archer</label>
       <race>BMT_RimeboneArcher</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -166,10 +168,10 @@
 		<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
 		<ArmorRating_Sharp>0.10</ArmorRating_Sharp>	
       </statBases>
-	<mechWeightClass>Medium</mechWeightClass>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+		<mechWeightClass>Medium</mechWeightClass>		
       </race>
     </ThingDef>
     
@@ -177,6 +179,7 @@
       <defName>BMT_TombToter</defName>
       <label>tomb toter</label>
       <race>BMT_TombToter</race>
+	  <combatPower>70</combatPower>
 	  <startingHediffs>
 		<def>BMT_TombToting</def>
 	  </startingHediffs>
@@ -220,8 +223,7 @@
 		</capacities>
 		<power>5</power>
 		<cooldownTime>2</cooldownTime>
-		<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
-
+		<linkedBodyPartsGroup>FullHead</linkedBodyPartsGroup>
 	  </li>
 	</tools>
       <race>
@@ -236,6 +238,7 @@
       <defName>BMT_SpectralSkull</defName>
       <label>spectral skull</label>
       <race>BMT_SpectralSkull</race>
+	  <combatPower>70</combatPower>
 			<flyingAnimationFramePathPrefix>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull_Flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
 			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
@@ -317,9 +320,10 @@
     </ThingDef>
     
     <PawnKindDef ParentName="BaseMechanoidKind">
-      <defName>BMT_SpectralSkull</defName>
-      <label>spectral skull</label>
-      <race>BMT_SpectralSkull</race>
+      <defName>BMT_Ghost</defName>
+      <label>ghost</label>
+      <race>BMT_Ghost</race>
+	  <combatPower>70</combatPower>
 			<flyingAnimationFramePathPrefix>BMT_FantasyTheUndead/Things/Creatures/Ghost/Ghost_Flying_</flyingAnimationFramePathPrefix>
 			<flyingAnimationFrameCount>1</flyingAnimationFrameCount>
 			<flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
@@ -380,6 +384,7 @@
       <defName>BMT_UndyingDisciple</defName>
       <label>undying disciple</label>
       <race>BMT_UndyingDisciple</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -423,6 +428,7 @@
       <defName>BMT_DecayingDrummer</defName>
       <label>decaying drummer</label>
       <race>BMT_DecayingDrummer</race>
+	  <combatPower>70</combatPower>
 	  <startingHediffs>
 		<def>BMT_DrumBeatOfTheDead</def>
 	  </startingHediffs>
@@ -473,10 +479,11 @@
 		</comps>
     </ThingDef>
     
-    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
+    <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_BishopOfRotAndRuin</defName>
       <label>bishop of rot and ruin</label>
       <race>BMT_BishopOfRotAndRuin</race>
+	  <combatPower>70</combatPower>
 	  <startingHediffs>
 		<def>BMT_HealTheDead</def>
 	  </startingHediffs>
@@ -512,13 +519,11 @@
 		<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
 		<ArmorRating_Sharp>0.20</ArmorRating_Sharp>	
       </statBases>
-	  <baseHealthScale>3</baseHealthScale>
-	  <baseBodySize>2</baseBodySize>
 	  <tools>
 	  <li>
 		<label>Fist</label>
 		<capacities>
-          <li>Crush</li>
+          <li>Blunt</li>
 		</capacities>
 		<power>20</power>
 		<cooldownTime>4</cooldownTime>
@@ -539,7 +544,7 @@
 	  <li>
 		<label>Fist</label>
 		<capacities>
-          <li>Crush</li>
+          <li>Blunt</li>
 		</capacities>
 		<power>20</power>
 		<cooldownTime>4</cooldownTime>
@@ -558,10 +563,12 @@
 		</extraMeleeDamages>
 	  </li>
 	</tools>
-	<mechWeightClass>Heavy</mechWeightClass>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
+	    <baseHealthScale>3</baseHealthScale>
+	    <baseBodySize>2</baseBodySize>
+		<mechWeightClass>Heavy</mechWeightClass>		
       </race>
     </ThingDef>
     
@@ -569,6 +576,7 @@
       <defName>BMT_Colossus</defName>
       <label>colossus</label>
       <race>BMT_Colossus</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
@@ -592,7 +600,7 @@
     <ThingDef ParentName="BMT_BaseUndead">
       <defName>BMT_UndeadMiner</defName>
       <label>undead miner</label>
-      <description></description>
+      <description>Zombies make the best miners. They don't need to eat, breathe, or sleep. They just continue to mine, forever. They don't mind being in the dark either. Mindless undead never get unhappy, after all.</description>
       <statBases>
         <MoveSpeed>3.0</MoveSpeed>
 		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>

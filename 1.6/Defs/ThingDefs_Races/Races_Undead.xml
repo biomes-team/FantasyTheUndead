@@ -140,6 +140,7 @@
 	<!-- <minGenerationAge>200</minGenerationAge> -->
 	<forceNormalGearQuality>true</forceNormalGearQuality>
 	<weaponMoney>9999~9999</weaponMoney>
+	<combatPower>10</combatPower>
 	<weaponTags></weaponTags>
   </PawnKindDef>
 
