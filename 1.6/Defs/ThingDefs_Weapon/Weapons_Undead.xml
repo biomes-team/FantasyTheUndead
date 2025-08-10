@@ -33,14 +33,16 @@
     <defName>BMT_RustedArbalest</defName>
     <label>rusted arbalest</label>
     <description>An old and rusted arbalest used by undead arbalisters.</description>
-    <possessionCount>1</possessionCount>
+    <techLevel>Medieval</techLevel>
     <graphicData>
       <texPath>BMT_FantasyTheUndead/Things/Item/UndeadArbalest/UndeadArbalest</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
     <statBases>
-      <Mass>1.5</Mass>
+	  <MarketValue>1000</MarketValue>
+	  <WorkToMake>7000</WorkToMake>
+      <Mass>1.35</Mass>
       <AccuracyTouch>0.75</AccuracyTouch>
       <AccuracyShort>0.45</AccuracyShort>
       <AccuracyMedium>0.65</AccuracyMedium>
@@ -55,7 +57,7 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Arrow_Short</defaultProjectile>
-        <warmupTime>1.55</warmupTime>
+        <warmupTime>1.355</warmupTime>
         <range>29.9</range>
         <soundCast>Bow_Small</soundCast>
       </li>
@@ -73,7 +75,7 @@
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
     <statBases>
-      <Mass>1.5</Mass>
+      <Mass>1.35</Mass>
       <AccuracyTouch>0.75</AccuracyTouch>
       <AccuracyShort>0.45</AccuracyShort>
       <AccuracyMedium>0.65</AccuracyMedium>
@@ -106,7 +108,7 @@
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
     <statBases>
-      <Mass>1.5</Mass>
+      <Mass>1.35</Mass>
       <AccuracyTouch>0.75</AccuracyTouch>
       <AccuracyShort>0.45</AccuracyShort>
       <AccuracyMedium>0.65</AccuracyMedium>
@@ -154,7 +156,9 @@
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
     <statBases>
-      <Mass>1.5</Mass>
+	  <MarketValue>1000</MarketValue>
+	  <WorkToMake>7000</WorkToMake>
+      <Mass>1.35</Mass>
       <AccuracyTouch>0.75</AccuracyTouch>
       <AccuracyShort>0.45</AccuracyShort>
       <AccuracyMedium>0.65</AccuracyMedium>
@@ -170,9 +174,9 @@
         <hasStandardCommand>true</hasStandardCommand>
         <warmupTime>1.0</warmupTime>
         <range>7.9</range>
-        <minRange>2</minRange>
+        <minRange>1</minRange>
         <beamFullWidthRange>6.9</beamFullWidthRange>
-        <burstShotCount>1</burstShotCount>
+        <burstShotCount>2</burstShotCount>
         <showBurstShotStats>false</showBurstShotStats>
         <beamWidth>6</beamWidth>
         <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
@@ -182,7 +186,7 @@
         <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
         <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
         <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
-        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamMaxDeviation>1.35</beamMaxDeviation>
         <beamCurvature>0.6</beamCurvature>
         <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
         <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
@@ -213,7 +217,9 @@
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
     <statBases>
-      <Mass>1.5</Mass>
+	  <MarketValue>1000</MarketValue>
+	  <WorkToMake>7000</WorkToMake>     
+	  <Mass>1.35</Mass>
       <AccuracyTouch>0.75</AccuracyTouch>
       <AccuracyShort>0.45</AccuracyShort>
       <AccuracyMedium>0.65</AccuracyMedium>
@@ -241,7 +247,7 @@
         <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
         <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
         <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
-        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamMaxDeviation>1.35</beamMaxDeviation>
         <beamCurvature>0.6</beamCurvature>
         <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
         <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
@@ -261,7 +267,7 @@
     </verbs>
   </ThingDef>
   
-      <ThingDef ParentName="LightUndeadRangedWeapon">
+    <ThingDef ParentName="LightUndeadRangedWeapon">
     <defName>BMT_AdeptStaff</defName>
     <label>adept staff</label>
     <description>An arcane staff used by undying adepts.</description>
@@ -272,7 +278,9 @@
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
     <statBases>
-      <Mass>1.5</Mass>
+ 	  <MarketValue>1000</MarketValue>
+	  <WorkToMake>7000</WorkToMake>
+	  <Mass>1.35</Mass>
       <AccuracyTouch>0.75</AccuracyTouch>
       <AccuracyShort>0.45</AccuracyShort>
       <AccuracyMedium>0.65</AccuracyMedium>
@@ -280,7 +288,7 @@
       <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
     </statBases>
     <weaponTags>
-      <li>BMT_DiscipleStaff</li>
+      <li>BMT_AdeptStaff</li>
     </weaponTags>
     <verbs>
       <li>
@@ -300,7 +308,7 @@
         <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
         <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
         <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
-        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamMaxDeviation>1.35</beamMaxDeviation>
         <beamCurvature>0.6</beamCurvature>
         <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
         <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
@@ -334,7 +342,8 @@
       <li>RangedHeavy</li>
     </weaponClasses>
     <statBases>
-      <WorkToMake>30000</WorkToMake>
+	  <MarketValue>1000</MarketValue>
+	  <WorkToMake>7000</WorkToMake>
       <Mass>3.4</Mass>
       <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
     </statBases>
@@ -421,7 +430,7 @@
     <techLevel>Medieval</techLevel>
     <statBases>
       <WorkToMake>7000</WorkToMake>
-      <Mass>1.5</Mass>
+      <Mass>1.35</Mass>
     </statBases>
     <weaponTags>
       <li>BMT_RustedAxe</li>
@@ -469,6 +478,7 @@
     <recipeMaker IsNull="True"/>
     <smeltable>False</smeltable>
     <statBases>
+	  <WorkToMake>7000</WorkToMake>
       <Mass>2</Mass>
     </statBases>
     <equippedAngleOffset>-65</equippedAngleOffset>
@@ -507,7 +517,7 @@
     <techLevel>Medieval</techLevel>
     <statBases>
       <WorkToMake>7000</WorkToMake>
-      <Mass>1.5</Mass>
+      <Mass>1.35</Mass>
     </statBases>
     <weaponTags>
       <li>BMT_RustyPitchfork</li>
@@ -547,7 +557,7 @@
     <techLevel>Medieval</techLevel>
     <statBases>
       <WorkToMake>7000</WorkToMake>
-      <Mass>1.5</Mass>
+      <Mass>1.35</Mass>
     </statBases>
     <weaponTags>
       <li>BMT_RustedPickaxe</li>
@@ -586,7 +596,7 @@
     <techLevel>Medieval</techLevel>
     <statBases>
       <WorkToMake>7000</WorkToMake>
-      <Mass>1.5</Mass>
+      <Mass>1.35</Mass>
     </statBases>
     <weaponTags>
       <li>BMT_DecayingDrum</li>
@@ -634,6 +644,8 @@
     <recipeMaker IsNull="True"/>
     <smeltable>False</smeltable>
     <statBases>
+	  <MarketValue>1000</MarketValue>
+	  <WorkToMake>7000</WorkToMake>
       <Mass>2</Mass>
     </statBases>
     <equippedAngleOffset>-65</equippedAngleOffset>
@@ -695,7 +707,9 @@
     <recipeMaker IsNull="True"/>
     <smeltable>False</smeltable>
     <statBases>
-      <Mass>4</Mass>
+ 	    <MarketValue>1000</MarketValue>
+	    <WorkToMake>7000</WorkToMake>   
+		<Mass>4</Mass>
     </statBases>
     <equippedAngleOffset>-65</equippedAngleOffset>
     <tools>

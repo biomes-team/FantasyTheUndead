@@ -79,14 +79,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Wraith/Wraith</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>2</drawSize>
+            <drawSize>1.6</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Wraith/Wraith</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>2</drawSize>
+            <drawSize>1.6</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -127,14 +127,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Shadow/Shadow</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>2</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Shadow/Shadow</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>2</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -157,7 +157,7 @@
       </race>
     <comps>
       <li Class="CompProperties_ProjectileInterceptor">
-        <radius>5</radius>
+        <radius>4</radius>
         <interceptGroundProjectiles>true</interceptGroundProjectiles>
         <color>(0.4, 0.4, 0.4)</color>
         <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
@@ -171,7 +171,7 @@
     </comps>
     </ThingDef>
     
-    <PawnKindDef ParentName="BaseMechanoidKind">
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
       <defName>BMT_UndyingAdept</defName>
       <label>undying adept</label>
       <race>BMT_UndyingAdept</race>
@@ -181,14 +181,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingAdept/UndyingAdept</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.5</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingAdept/UndyingAdept</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.5</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -207,7 +207,7 @@
 		<ArmorRating_Blunt>0.50</ArmorRating_Blunt>
 		<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
 		<Flammability>0</Flammability>
-		<ArmorRating_Heat>1.5</ArmorRating_Heat>
+		<ArmorRating_Heat>1.35</ArmorRating_Heat>
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -226,14 +226,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.5</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.5</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -252,7 +252,7 @@
 		<ArmorRating_Blunt>0.50</ArmorRating_Blunt>
 		<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
 		<Flammability>0</Flammability>
-		<ArmorRating_Heat>1.5</ArmorRating_Heat>
+		<ArmorRating_Heat>1.35</ArmorRating_Heat>
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -261,7 +261,7 @@
       </race>
     </ThingDef>
     
-    <PawnKindDef ParentName="BaseMechanoidKind">
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
       <defName>BMT_EternalGeneral</defName>
       <label>eternal general</label>
       <race>BMT_EternalGeneral</race>
@@ -276,14 +276,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.5</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.5</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -304,7 +304,7 @@
 		<Flammability>0</Flammability>
 		<ArmorRating_Heat>2</ArmorRating_Heat>
 		<MeleeCooldownFactor>-0.4</MeleeCooldownFactor>
-		<MeleeHitChance>1.5</MeleeHitChance>
+		<MeleeHitChance>1.35</MeleeHitChance>
       </statBases>
       <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
@@ -349,7 +349,7 @@
 	</tools>  
     </ThingDef>
     
-    <PawnKindDef ParentName="BaseMechanoidKind">
+    <PawnKindDef ParentName="NonCombatLightMechanoidKind">
       <defName>BMT_FusedLegion</defName>
       <label>fused legion</label>
       <race>BMT_FusedLegion</race>
@@ -359,14 +359,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.5</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.5</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -459,14 +459,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.5</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.5</drawSize>
+            <drawSize>1.35</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>

@@ -127,14 +127,14 @@
           <depth>Outside</depth>
         </li>
         <li>
-          <def>BMT_WispInner</def>
+          <def>BMT_WispOuter</def>
           <coverage>0.2</coverage>
           <depth>Outside</depth>
         </li>
         <li>
-          <def>BMT_WispInner</def>
+          <def>BMT_WispMover</def>
           <coverage>0.2</coverage>
-          <depth>Outside</depth>
+          <depth>Inside</depth>
         </li>
         <li>
           <def>BMT_WispHarm</def>

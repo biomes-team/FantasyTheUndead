@@ -589,7 +589,7 @@
         <statOffsets>
           <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
           <MeleeHitChance>2</MeleeHitChance>
-		  <MoveSpeed>1.5</MoveSpeed>
+		  <MoveSpeed>1.35</MoveSpeed>
         </statOffsets>
       </li>
     </stages>
@@ -641,7 +641,7 @@
     <stages>
       <li>
         <statOffsets>
-          <InjuryHealingFactor>1.5</InjuryHealingFactor>
+          <InjuryHealingFactor>1.35</InjuryHealingFactor>
         </statOffsets>
       </li>
     </stages>
