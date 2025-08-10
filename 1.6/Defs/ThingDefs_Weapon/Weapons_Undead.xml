@@ -75,6 +75,8 @@
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
     <statBases>
+	  <MarketValue>1000</MarketValue>
+	  <WorkToMake>7000</WorkToMake>	
       <Mass>1.35</Mass>
       <AccuracyTouch>0.75</AccuracyTouch>
       <AccuracyShort>0.45</AccuracyShort>
@@ -108,7 +110,9 @@
     </graphicData>
     <soundInteract>Bow_Small</soundInteract>
     <statBases>
-      <Mass>1.35</Mass>
+	  <MarketValue>1000</MarketValue>
+	  <WorkToMake>7000</WorkToMake> 
+	  <Mass>1.35</Mass>
       <AccuracyTouch>0.75</AccuracyTouch>
       <AccuracyShort>0.45</AccuracyShort>
       <AccuracyMedium>0.65</AccuracyMedium>
@@ -429,7 +433,8 @@
     <description>A worn and rusty axe wielded by a specific type of zombie.</description>
     <techLevel>Medieval</techLevel>
     <statBases>
-      <WorkToMake>7000</WorkToMake>
+	  <MarketValue>1000</MarketValue>
+	  <WorkToMake>7000</WorkToMake>
       <Mass>1.35</Mass>
     </statBases>
     <weaponTags>
