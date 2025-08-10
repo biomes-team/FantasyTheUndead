@@ -100,14 +100,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -141,14 +141,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/RimeBones/RimeBones</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/RimeBones/RimeBones</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -181,21 +181,23 @@
       <race>BMT_TombToter</race>
 	  <combatPower>70</combatPower>
 	  <startingHediffs>
+		<li>
 		<def>BMT_TombToting</def>
+		</li>
 	  </startingHediffs>
       <lifeStages>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -250,14 +252,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/SpectralSkull/SpectralSkull</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -335,14 +337,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Ghost/Ghost</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Ghost/Ghost</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -390,14 +392,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingDisciple/UndyingDisciple</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingDisciple/UndyingDisciple</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -430,21 +432,23 @@
       <race>BMT_DecayingDrummer</race>
 	  <combatPower>70</combatPower>
 	  <startingHediffs>
+		<li>
 		<def>BMT_DrumBeatOfTheDead</def>
+		</li>
 	  </startingHediffs>
       <lifeStages>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/DecayingDrummer/DecayingDrummer</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/DecayingDrummer/DecayingDrummer</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -485,21 +489,23 @@
       <race>BMT_BishopOfRotAndRuin</race>
 	  <combatPower>70</combatPower>
 	  <startingHediffs>
+		<li>
 		<def>BMT_HealTheDead</def>
+		</li>
 	  </startingHediffs>
       <lifeStages>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -582,14 +588,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -626,14 +632,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Miner/Miner</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Miner/Miner</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>

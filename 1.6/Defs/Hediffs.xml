@@ -6,7 +6,7 @@
     <label>arcane harm</label>
     <labelNoun>An arcane wound</labelNoun>
     <description>A burn-like wound caused by an arcane source.</description>
-    <comps>
+    <comps Inherit="False">
       <li Class="HediffCompProperties_TendDuration">
         <labelTendedWell>bandaged</labelTendedWell>
         <labelTendedWellInner>salved</labelTendedWellInner>

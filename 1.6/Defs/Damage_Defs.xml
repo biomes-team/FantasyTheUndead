@@ -2,7 +2,7 @@
 <Defs>
 <!-- Arcane Damages -->
 
-  <DamageDef Name="Beam">
+  <DamageDef ParentName="Beam">
     <defName>BMT_ArcaneHarm</defName>
     <label>arcane harm</label>
     <workerClass>DamageWorker_AddInjury</workerClass>
@@ -60,7 +60,7 @@
   </DamageDef>
   
 <!-- Noxious Wound Damages -->
-  <DamageDef Name="CutBase">
+  <DamageDef ParentName="CutBase">
     <defName>BMT_NoxiousCut</defName>
     <label>noxious cut</label>
     <workerClass>DamageWorker_Cut</workerClass>
@@ -111,7 +111,7 @@
 
 <!-- Ragged/Bleeder Damages -->
 
-  <DamageDef Name="CutBase">
+  <DamageDef ParentName="CutBase">
     <defName>BMT_RaggedCut</defName>
     <label>ragged cut</label>
     <workerClass>DamageWorker_Cut</workerClass>

@@ -21,19 +21,20 @@
       <defName>BMT_Zombie</defName>
       <label>zombie</label>
       <race>BMT_Zombie</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Zombie/Zombie</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Zombie/Zombie</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -63,19 +64,20 @@
       <defName>BMT_Skeleton</defName>
       <label>skeleton</label>
       <race>BMT_Skeleton</race>
+	  <combatPower>70</combatPower>
       <lifeStages>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Skeleton/Skeleton</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Skeleton/Skeleton</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -113,14 +115,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -157,14 +159,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Arbalister/Arbalister</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Arbalister/Arbalister</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -203,14 +205,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Axeman/Axeman</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Axeman/Axeman</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -249,14 +251,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/RisenFootSoldier/RisenFootSoldier</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -341,14 +343,14 @@
           <bodyGraphicData>
             <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -387,14 +389,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Ranger/Ranger</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -440,14 +442,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Farmer/Farmer</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Farmer/Farmer</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -528,14 +530,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/IronBones/IronBones</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/IronBones/IronBones</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -585,14 +587,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingInitiate/UndyingInitiate</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/UndyingInitiate/UndyingInitiate</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -618,7 +620,7 @@
 		<body>QuadrupedAnimalWithPawsAndTail</body>
 		<mechWeightClass>Light</mechWeightClass>
       </race>
-    <tools>
+    <tools Inherit="False">
       <li>
         <label>left claw</label>
         <labelNoLocation>claw</labelNoLocation>
@@ -697,14 +699,14 @@
           <bodyGraphicData>
             <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -728,7 +730,7 @@
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Medium</mechWeightClass>
       </race>
-    <tools>
+    <tools Inherit="False">
       <li>
         <label>left claw</label>
         <labelNoLocation>claw</labelNoLocation>
@@ -806,14 +808,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -838,7 +840,7 @@
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Medium</mechWeightClass>
       </race>
-	      <tools>
+	  <tools Inherit="False">
       <li>
         <label>head</label>
         <capacities>
@@ -892,14 +894,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -925,7 +927,7 @@
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Medium</mechWeightClass>
       </race>
-	      <tools>
+	  <tools Inherit="False">
       <li>
         <label>head</label>
         <capacities>
@@ -979,14 +981,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Peasant/Peasant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -1023,14 +1025,14 @@
           <bodyGraphicData>
             <texPath>Things/Pawn/Mechanoid/Lifter</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>Things/Pawn/Mechanoid/LifterAncient</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>
@@ -1050,7 +1052,7 @@
 		<MaxFlightTime>50</MaxFlightTime>
 		<FlightCooldown>10</FlightCooldown>
       </statBases>
-	  <tools>
+	  <tools Inherit="False">
 	  <li>
 		<label>Zap</label>
 		<capacities>
@@ -1073,6 +1075,7 @@
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Light</mechWeightClass>
 		<canFlyInVacuum>true</canFlyInVacuum>		
+		<body>BMT_Wisp</body>
       </race>
     </ThingDef>
     
@@ -1092,14 +1095,14 @@
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Wisp/Wisp</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
         <li>
           <bodyGraphicData>
             <texPath>BMT_FantasyTheUndead/Things/Creatures/Wisp/Wisp</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1.1</drawSize>
+            <drawSize>1.5</drawSize>
           </bodyGraphicData>
         </li>
       </lifeStages>

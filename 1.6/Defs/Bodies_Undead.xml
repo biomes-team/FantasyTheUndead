@@ -100,11 +100,16 @@
     </tags>
   </BodyPartDef>
   
+   <BodyPartGroupDef>
+    <defName>BMT_WispAttackTool</defName>
+    <label>wisp harm</label>
+  </BodyPartGroupDef>
+  
   <BodyDef>
     <defName>BMT_Wisp</defName>
     <label>will-o-wisp</label>
     <corePart>
-      <def>DroneShell</def>
+      <def>BMT_WispInner</def>
       <height>Middle</height>
       <depth>Outside</depth>
       <groups>
