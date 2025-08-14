@@ -15,6 +15,6 @@ namespace BMT_Undeads
 		{
 			new Harmony("biomesteam.fantasytheundead").PatchAll();
 		}
-	}
+    }
 
 }

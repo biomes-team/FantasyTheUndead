@@ -74,18 +74,18 @@
 			<subNodes>
 			  
 			  <!-- Keep charging if we're already charging -->
-			  <li Class="ThinkNode_ConditionalRecharging">
-				<subNodes>
-				  <li Class="JobGiver_GetEnergy_Charger" />
-				</subNodes>
-			  </li>
+			  <!-- <li Class="ThinkNode_ConditionalRecharging"> -->
+				<!-- <subNodes> -->
+				  <!-- <li Class="JobGiver_GetEnergy_Charger" /> -->
+				<!-- </subNodes> -->
+			  <!-- </li> -->
 			  
 			  <!-- Work modes -->
 			  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 				<workMode>Work</workMode>
 				<subNodes>
 				  <li Class="JobGiver_SeekAllowedArea" />
-				  <li Class="JobGiver_GetEnergy_Charger" />
+				  <!-- <li Class="JobGiver_GetEnergy_Charger" /> -->
 				  <li Class="JobGiver_Work">
 					<emergency>true</emergency>
 				  </li>
@@ -121,10 +121,10 @@
 				<workMode>Recharge</workMode>
 				<subNodes>
 				  <li Class="JobGiver_SeekAllowedArea" />
-				  <li Class="JobGiver_GetEnergy_Charger" />
-				  <li Class="JobGiver_GetEnergy_SelfShutdown">
-					<forced>true</forced>
-				  </li>
+				  <li Class="JobGiver_SelfShutdown" />
+				  <!-- <li Class="JobGiver_GetEnergy_SelfShutdown"> -->
+					<!-- <forced>true</forced> -->
+				  <!-- </li> -->
 				</subNodes>
 			  </li>
 			  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
@@ -157,6 +157,11 @@
 		<!-- Idle player mech -->
 		<li Class="ThinkNode_ConditionalPlayerControlledMech">
 		  <subNodes>
+			<!-- Player controlled undeads fight nearby hostiles -->
+			<!-- <li Class="JobGiver_AIFightEnemies"> -->
+			  <!-- <targetAcquireRadius>30</targetAcquireRadius> -->
+			  <!-- <targetKeepRadius>35</targetKeepRadius> -->
+			<!-- </li> -->
 			<li Class="ThinkNode_Tagger">
 			  <tagToGive>Idle</tagToGive>
 			  <subNodes>

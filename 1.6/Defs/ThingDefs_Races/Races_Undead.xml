@@ -100,9 +100,8 @@
 	  <li>ITab_Pawn_Log</li>
 	</inspectorTabs>
 	<!-- temp butcher product -->
-	<butcherProducts>
-	  <Steel>30</Steel>
-	  <Plasteel>10</Plasteel>
+	<butcherProducts Inherit="False">
+	  <Steel>1</Steel>
 	</butcherProducts>
 	<tools>
 	  <li>

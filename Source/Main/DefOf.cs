@@ -11,7 +11,7 @@ namespace BMT_Undeads
 	[DefOf]
 	public static class MiscDefOf
 	{
-		public static BackstoryDef Child27;
+		//public static BackstoryDef Child27;
 	}
 
 }
