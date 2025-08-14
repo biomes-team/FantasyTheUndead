@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <JobDef>
+	<defName>BMT_InstalUndeadBodypart</defName>
+	<driverClass>BMT_Undeads.JobDriver_InstallMechImplant</driverClass>
+	<reportString>installing bodypart in TargetA.</reportString>
+	<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+</Defs>

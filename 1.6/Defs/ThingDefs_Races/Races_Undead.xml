@@ -125,7 +125,10 @@
 	</tools>
 	<comps>
 	  <!-- In Dev -->
-	  <li Class="BMT_Undeads.CompProperties_ControlledUndead"/>
+	  <li Class="BMT_Undeads.CompProperties_ControlledUndead">
+		<!-- hp/day -->
+		<regen>20</regen>
+	  </li>
 	</comps>
   </ThingDef>
 

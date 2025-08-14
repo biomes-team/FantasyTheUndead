@@ -58,6 +58,7 @@
     <Compile Include="Main\DefOf.cs" />
     <Compile Include="Main\CompProperties_Necromancer.cs" />
     <Compile Include="Main\CompProperties_ControlledUndead.cs" />
+    <Compile Include="Main\JobDriver_InstallMechImplant.cs" />
     <Compile Include="Main\Utility.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

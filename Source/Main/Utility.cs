@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace BMT_Undeads
 {
@@ -72,6 +73,48 @@ namespace BMT_Undeads
             hediff2.Severity = Mathf.Max(partHealth - 1f, partHealth * 0.9f);
             hediff2.ageTicks = initialAgeTicks;
             pawn.health.hediffSet.Notify_Regenerated(partHealth - hediff2.Severity);
+        }
+
+        public static void InstallPartTo(Pawn mech, BodyPartRecord part, HediffDef hediffDef, ThingDef moteDef, Thing item)
+        {
+            Hediff hediff = HediffMaker.MakeHediff(hediffDef, mech);
+            mech.health.AddHediff(hediff, part);
+            SoundDefOf.MechSerumUsed.PlayOneShot(SoundInfo.InMap(mech));
+            ThingDef thingDef = moteDef;
+            if (thingDef != null)
+            {
+                MoteMaker.MakeAttachedOverlay(mech, thingDef, Vector3.zero);
+            }
+            item.SplitOff(1).Destroy();
+            Messages.Message("WVC_Ultra_MechImplantInstalled".Translate(hediffDef.label.CapitalizeFirst(), mech.LabelCap), mech, MessageTypeDefOf.PositiveEvent, historical: false);
+        }
+
+        public static Hediff GetFirstHediffOnPart(List<Hediff> hediffs, BodyPartRecord part)
+        {
+            for (int i = 0; i < hediffs.Count; i++)
+            {
+                if (hediffs[i].Part == part)
+                {
+                    return hediffs[i];
+                }
+            }
+            return null;
+        }
+
+        public static bool HasUnoccupiedBodyParts(Pawn pawn, CompTargetEffect_InstallImplantInTarget install_comp)
+        {
+            if (install_comp != null)
+            {
+                List<BodyPartRecord> bodyPartRecords = pawn.RaceProps.body.GetPartsWithDef(install_comp.Props.bodyPart);
+                for (int i = 0; i < bodyPartRecords.Count; i++)
+                {
+                    if (bodyPartRecords[i] != null && !pawn.health.hediffSet.HasHediff(install_comp.Props.hediffDef, bodyPartRecords[i]))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
     }
