@@ -239,6 +239,8 @@
       </lifeStages>
 	   <weaponTags>
         <li>BMT_UndeadChampionBlade</li>
+		<li>BMT_UndeadChampionMace</li>
+		<li>BMT_UndeadChampionSpear</li>
       </weaponTags>
     </PawnKindDef>
 
