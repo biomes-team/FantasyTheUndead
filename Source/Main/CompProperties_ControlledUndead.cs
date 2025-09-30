@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -116,6 +117,15 @@ namespace BMT_Undeads
                 return;
             }
             ResurrectionUtility.TryResurrect(pawn);
+            if (pawn.GetOverseer() != null)
+            {
+                return;
+            }
+            Pawn overseer = pawn.Map != null ? pawn.Map?.mapPawns?.AllHumanlike?.Where((p) => p.mechanitor != null && p.Faction == Faction.OfPlayer)?.RandomElement() : pawn.GetCaravan()?.PawnsListForReading?.Where((p) => p.mechanitor != null && p.Faction == Faction.OfPlayer)?.RandomElement();
+            if (overseer != null)
+            {
+                pawn.SetOverseer(overseer);
+            }
         }
 
         public override void PostExposeData()

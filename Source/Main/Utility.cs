@@ -14,6 +14,16 @@ namespace BMT_Undeads
     public static class Utility
     {
 
+        public static void SetOverseer(this Pawn mech, Pawn newOverseer)
+        {
+            mech.GetOverseer()?.relations.RemoveDirectRelation(PawnRelationDefOf.Overseer, mech);
+            if (mech.Faction != newOverseer.Faction)
+            {
+                mech.SetFaction(newOverseer.Faction);
+            }
+            newOverseer.relations.AddDirectRelation(PawnRelationDefOf.Overseer, mech);
+        }
+
         public static bool IsUndead(this Pawn pawn)
         {
             return pawn.HasComp<CompControlledUndead>();
@@ -32,7 +42,7 @@ namespace BMT_Undeads
             bool woundRegen = false;
             if (regeneration > 0f)
             {
-                pawn.health.hediffSet.GetHediffs(ref tmpHediffInjuries, (Hediff_Injury h) => h.def != null);
+                pawn.health.hediffSet.GetHediffs(ref tmpHediffInjuries, h => h.def != null);
                 foreach (Hediff_Injury tmpHediffInjury in tmpHediffInjuries)
                 {
                     float num5 = Mathf.Min(regeneration, tmpHediffInjury.Severity);
@@ -47,7 +57,7 @@ namespace BMT_Undeads
                 }
                 if (regeneration > 0f)
                 {
-                    pawn.health.hediffSet.GetHediffs(ref tmpHediffMissing, (Hediff_MissingPart missingPart) => missingPart.Part.parent != null && !tmpHediffInjuries.Any((Hediff_Injury injury) => injury.Part == missingPart.Part.parent) && pawn.health.hediffSet.GetFirstHediffMatchingPart<Hediff_MissingPart>(missingPart.Part.parent) == null && pawn.health.hediffSet.GetFirstHediffMatchingPart<Hediff_AddedPart>(missingPart.Part.parent) == null);
+                    pawn.health.hediffSet.GetHediffs(ref tmpHediffMissing, missingPart => missingPart.Part.parent != null && !tmpHediffInjuries.Any(injury => injury.Part == missingPart.Part.parent) && pawn.health.hediffSet.GetFirstHediffMatchingPart<Hediff_MissingPart>(missingPart.Part.parent) == null && pawn.health.hediffSet.GetFirstHediffMatchingPart<Hediff_AddedPart>(missingPart.Part.parent) == null);
                     using List<Hediff_MissingPart>.Enumerator enumerator3 = tmpHediffMissing.GetEnumerator();
                     if (enumerator3.MoveNext())
                     {

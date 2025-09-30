@@ -23,7 +23,7 @@ namespace BMT_Undeads
                 canTargetBuildings = false,
                 canTargetItems = false,
                 mapObjectTargetsMustBeAutoAttackable = false,
-                validator = (TargetInfo x) => x.Thing is Pawn pawn && ValidateTarget(x.Thing) && Install_comp != null && Utility.HasUnoccupiedBodyParts(pawn, Install_comp)
+                validator = x => x.Thing is Pawn pawn && ValidateTarget(x.Thing) && Install_comp != null && Utility.HasUnoccupiedBodyParts(pawn, Install_comp)
             };
         }
 
