@@ -1,21 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     <!-- Zombie -->  
-    <ThingDef ParentName="BMT_BaseUndead">
-      <defName>BMT_Zombie</defName>
-      <label>zombie</label>
-      <description>A basic zombie. Due to its undead state it doesn't feel pain, nor does it bleed.</description>
-      <statBases>
-        <MoveSpeed>4.25</MoveSpeed>
+	<ThingDef ParentName="BMT_BaseUndead">
+	  <defName>BMT_Zombie</defName>
+	  <label>zombie</label>
+	  <description>A basic zombie. Due to its undead state it doesn't feel pain, nor does it bleed.</description>
+	  <statBases>
+		<MoveSpeed>4.25</MoveSpeed>
 		<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
 		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>	
-      </statBases>
-      <race>
+	  </statBases>
+	  <race>
 		<isImmuneToInfections>true</isImmuneToInfections>
 		<bleedRateFactor>0.0</bleedRateFactor>
 		<mechWeightClass>Light</mechWeightClass>
-      </race>
-    </ThingDef>
+	  </race>
+	  <comps>
+		<li Class="BMT_Undeads.CompProperties_AutoResurrector"/>
+	  </comps>
+	</ThingDef>
     
     <PawnKindDef ParentName="BaseMechanoidKind">
       <defName>BMT_Zombie</defName>

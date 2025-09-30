@@ -67,19 +67,67 @@ namespace BMT_Undeads
 			Utility.Regeneration(parent as Pawn, Props.regen, tick);
         }
 
-		//public void Energy()
-		//{
-		//	if (parent is Pawn pawn && pawn.needs?.energy != null)
-		//	{
-		//		pawn.needs.energy.CurLevel = pawn.needs.energy.MaxLevel;
-		//	}
-		//}
+        //public void Energy()
+        //{
+        //	if (parent is Pawn pawn && pawn.needs?.energy != null)
+        //	{
+        //		pawn.needs.energy.CurLevel = pawn.needs.energy.MaxLevel;
+        //	}
+        //}
 
-	}
+    }
+    public class CompProperties_AutoResurrector : CompProperties
+    {
+
+        public CompProperties_AutoResurrector()
+        {
+            compClass = typeof(ThingComp_AutoResurrector);
+        }
+
+    }
+
+    public class ThingComp_AutoResurrector : ThingComp
+    {
+
+        private int resurrectionDelay;
+
+        public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
+        {
+            resurrectionDelay = Find.TickManager.TicksGame + 60000;
+        }
+
+        public override void CompTickRare()
+        {
+            UndeadTick();
+        }
+
+        public void UndeadTick()
+        {
+            if (Find.TickManager.TicksGame < resurrectionDelay)
+            {
+                return;
+            }
+            if (parent is not Pawn pawn)
+            {
+                return;
+            }
+            if (pawn.Corpse?.Map == null)
+            {
+                return;
+            }
+            ResurrectionUtility.TryResurrect(pawn);
+        }
+
+        public override void PostExposeData()
+        {
+            Scribe_Values.Look(ref resurrectionDelay, "resurrectionDelay_BMT_Undead", 0);
+        }
+
+    }
 
     /// <summary>
     /// Only internal use. Do not touch.
-    /// Needed to remove feral check. May cause conflict with mods that have crooked check, but it is not our problem.
+    /// Needed to remove feral check. May cause conflict with mods that have crooked CompProperties_OverseerSubject check, but it is not our problem.
     /// </summary>
     public class CompProperties_OverseerSubject_Undead : CompProperties_OverseerSubject
     {
